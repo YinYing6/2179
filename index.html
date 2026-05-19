@@ -24,11 +24,10 @@
   <!-- HERO -->
   <header class="hero">
     <div class="container">
-      <p class="hero-eyebrow">Malaysian Tourism 2017–2025</p>
-      <h1 class="hero-title">A Nation's Comeback</h1>
+      <h1 class="hero-title">Malaysian Tourism: <br>A Nation's Comeback</h1>
       <p class="hero-subtitle">
         In 2020, arrivals collapsed. By 2024, Malaysia broke records in every metric.
-        Explore the data behind Southeast Asia's most remarkable tourism comeback.
+        Explore the data behind Southeast Asia's most remarkable tourism recovery.
       </p>
 
       <div class="stat-cards">
@@ -50,7 +49,7 @@
         <div class="stat-card">
           <span class="stat-num">3.54<span class="stat-unit">M</span></span>
           <span class="stat-label">Tourism jobs</span>
-          <span class="stat-note">Full recovery from pandemic lows</span>
+          <span class="stat-note">Near-recovery; peak was 3.61M in 2022</span>
         </div>
       </div>
     </div>
@@ -62,25 +61,24 @@
       <div class="section-header">
         <h2 class="section-title">The Collapse and the Comeback</h2>
         <p class="section-intro">
-          Inbound arrivals fell <strong>98.8%</strong> in a single year —
-          from <strong>35 million</strong> to just <strong>400,000</strong> visitors.
-          Domestic travel halved overnight. Yet by 2024, both had not just
-          recovered but set all-time records. The charts below show how fast,
-          and how unevenly, the rebound unfolded.
+          Malaysia's tourism industry suffered one of the steepest drops on record
+          in 2020, then staged one of the fastest recoveries in Southeast Asia.
+          The two charts below trace that arc, from the depths of the pandemic to
+          the record-breaking rebound of 2024.
         </p>
       </div>
 
       <div class="grid-2">
         <div class="chart-block">
           <h3 class="chart-title">Visitor Arrivals 2017–2024</h3>
-          <p class="chart-note">Both collapsed in 2020 and set all-time records by 2024. Domestic on the left axis; inbound visitors (in thousands) on the right.</p>
+          <p class="chart-note">Two lines, two y-axes. Inbound (orange) plunged 99% in 2021 to just 400,000; domestic (blue) halved. Both broke all-time records by 2024.</p>
           <div id="vis-recovery" class="vis-container"></div>
           <p class="chart-source">Source: Department of Statistics Malaysia (DOSM); Lembaga Penggalakan Pelancongan Malaysia (Tourism Malaysia) </p>
         </div>
 
         <div class="chart-block">
           <h3 class="chart-title">Quarterly Domestic Visitors 2021–2025</h3>
-          <p class="chart-note">After the October 2021 border reopening, quarterly visitors multiplied sixfold — from 11 million to over 73 million per quarter by 2025.</p>
+          <p class="chart-note">Area height = domestic visitors that quarter. The snap-back after October 2021 border reopening is immediate. Q4 2025 reached 74 million, seven times the pandemic trough.</p>
           <div id="vis-quarterly" class="vis-container"></div>
           <p class="chart-source">Source: DOSM Domestic Tourism Survey</p>
         </div>
@@ -94,15 +92,16 @@
       <div class="section-header">
         <h2 class="section-title">Where Malaysia Travels</h2>
         <p class="section-intro">
-          <strong>Selangor</strong> generates and receives more domestic tourists
-          than any other state. Drag the year slider to trace how COVID
-          contracted demand across all states in 2020–2021, and how recovery
-          spread unevenly from 2022 onwards.
+          Domestic tourism in Malaysia is not evenly spread as
+          a handful of states account for the majority of both origins
+          and destinations. Geography, population, and economic activity
+          all concentrate flows in predictable corridors.
         </p>
       </div>
 
       <div class="chart-block chart-block--full">
         <h3 class="chart-title">Domestic Visitors Received by State</h3>
+        <p class="chart-note">Darker shade = more visitors received. Drag the year slider to trace COVID's contraction across states in 2020–2021, and the uneven recovery from 2022. Selangor and KL consistently lead.</p>
         <div id="vis-choropleth" class="vis-container"></div>
         <p class="chart-source">Source: Department of Statistics Malaysia (DOSM)</p>
       </div>
@@ -111,7 +110,7 @@
 
       <div class="chart-block chart-block--full">
         <h3 class="chart-title">State-to-State Tourist Flows (2024)</h3>
-        <p class="chart-note">Row = origin state; column = destination state. Diagonal cells = trips within the same state. Selangor's row and column are the largest — it both sends and receives the most visitors.</p>
+        <p class="chart-note">Row = origin state; column = destination. Brightest cells = within-state day trips. The Selangor row and column stand out as the busiest cross-state corridor, reflecting its role as Malaysia's economic and population centre.</p>
         <div id="vis-heatmap" class="vis-container"></div>
         <p class="chart-source">Source: Department of Statistics Malaysia (DOSM)</p>
       </div>
@@ -124,26 +123,24 @@
       <div class="section-header">
         <h2 class="section-title">Malaysia's Global Draw</h2>
         <p class="section-intro">
-          <strong>Singapore</strong> accounts for nearly <strong>half</strong>
-          of all inbound arrivals — every year, without exception. But COVID
-          broke the pattern: Thailand seized the top spot in 2021 simply
-          because the Johor Causeway was shut. China's rebound stands out —
-          from near-zero in 2021 back to <strong>3rd place</strong> by 2024.
+          Malaysia's inbound tourism is dominated by proximity, neighbouring
+          countries consistently top the rankings. COVID disrupted that geography
+          when land borders closed, exposing how dependent arrival numbers are on
+          physical access rather than destination appeal alone.
         </p>
       </div>
 
       <div class="grid-2">
         <div class="chart-block">
           <h3 class="chart-title">Source Country Rankings — How COVID Reshuffled the Table</h3>
-          <p class="chart-note">Vertical position = rank; band width = visitor volume. 
-            <br />Singapore's band dwarfs all others at ~18 million arrivals. Hover over any band for exact figures.</p>
+          <p class="chart-note">Vertical position = rank; band width = visitor volume. Hover any band for exact figures. Singapore holds the top rank every year except 2021, when the Johor Causeway shut and Thailand briefly led. China's band nearly vanishes in 2021 then climbs back to 3rd by 2024.</p>
           <div id="vis-bump" class="vis-container"></div>
           <p class="chart-source">Source: Lembaga Penggalakan Pelancongan Malaysia (Tourism Malaysia)</p>
         </div>
 
         <div class="chart-block">
           <h3 class="chart-title">Hotel Performance Trajectory 2019–2024</h3>
-          <p class="chart-note">Each point is one year. Move right = higher occupancy; move up = longer stays. Both collapsed together in 2020 — but occupancy is recovering faster than how long guests stay.</p>
+          <p class="chart-note">Each point = one year; follow the path chronologically. Occupancy (55%) is nearly back to 2019, but average stay (5.1 nights) is still far behind the pre-COVID 7.4.</p>
           <div id="vis-hotel" class="vis-container"></div>
           <p class="chart-source">Source: Lembaga Penggalakan Pelancongan Malaysia (Tourism Malaysia)</p>
         </div>
@@ -157,17 +154,16 @@
       <div class="section-header">
         <h2 class="section-title">Who's Behind the Boom</h2>
         <p class="section-intro">
-          Malaysia's domestic tourist is getting older. The
-          <strong>40–54 age group</strong> grew from 23.5% to
-          <strong>27.4%</strong> while the 15–24 cohort shrank.
-          <strong>Bumiputera</strong> visitors now make up
-          <strong>63%</strong> of all domestic trips.
+          Volume records mask a quieter structural shift: the profile of
+          Malaysia's domestic tourist is changing. The traveller base is ageing,
+          and the ethnic composition of trips reveals which communities are
+          driving the boom.
         </p>
       </div>
 
       <div class="chart-block chart-block--full">
         <h3 class="chart-title">Demographic Shifts in Domestic Tourists — 2023 to 2024</h3>
-        <p class="chart-note">Each line connects one group's share from 2023 (left) to 2024 (right). The 40–54 age group shows the sharpest upward shift.</p>
+        <p class="chart-note">Each line = one demographic group's share of domestic trips, 2023 vs 2024. The 40–54 bracket gained 3.9%, the sharpest rise. The 15–24 and 25–39 cohorts both shrank. Bumiputera visitors make up 63% of all trips. </p>
         <div id="vis-slope" class="vis-container"></div>
         <p class="chart-source">Source: Department of Statistics Malaysia (DOSM)</p>
       </div>
@@ -180,26 +176,24 @@
       <div class="section-header">
         <h2 class="section-title">How They Travel, Who Goes Together</h2>
         <p class="section-intro">
-          <strong>9 in 10</strong> domestic trips are made by private vehicle —
-          Malaysia's road network makes the car the undisputed default.
-          The bigger story is who travels together: family trips surged
-          <strong>+28%</strong> in 2024 while solo travel fell sharply,
-          marking a clear post-pandemic turn toward group holidays.
+          How Malaysians travel and who they travel with reveals both
+          the country's infrastructure reality and a social shift that emerged
+          from the pandemic years. The mode of transport is driven by roads;
+          the companionship is driven by something deeper.
         </p>
       </div>
 
       <div class="grid-2">
         <div class="chart-block">
           <h3 class="chart-title">Mode of Transport — 2024 Share</h3>
-          <p class="chart-note">Each square = 1% of all domestic trips. 
-            <br />Private vehicles fill 91 squares — air, rail, and water transport share the remaining 9.</p>
+          <p class="chart-note">Each square = 1% of all domestic trips. Private vehicles fill 91 of them: Malaysia's road network makes the car the default for 9 in 10 journeys. Air, rail, and water transport share just one square between them, reflecting limited public transport connectivity to most tourism destinations.</p>
           <div id="vis-waffle" class="vis-container" style="max-width:320px;"></div>
           <p class="chart-source">Source: Department of Statistics Malaysia (DOSM)</p>
         </div>
 
         <div class="chart-block">
           <h3 class="chart-title">Trip Type — 2023 vs 2024</h3>
-          <p class="chart-note">Family same-day trips surged by 51 million in 2024; individual overnight trips fell by nearly half. The post-pandemic shift is toward group, not solo travel.</p>
+          <p class="chart-note">Bars compare 2023 (light blue) vs 2024 (dark blue) by trip type. Family same-day trips surged +28%, adding 51 million trips. Individual overnight trips nearly halved, signalling a clear post-pandemic pivot from solo to group holidays.</p>
           <div id="vis-trip-type" class="vis-container"></div>
           <p class="chart-source">Source: Department of Statistics Malaysia (DOSM)</p>
         </div>
@@ -213,26 +207,24 @@
       <div class="section-header">
         <h2 class="section-title">The Economic Engine</h2>
         <p class="section-intro">
-          Tourism's direct GDP hit <strong>RM120 billion</strong> in 2024 —
-          exceeding the pre-pandemic peak of RM102B. The sector employs
-          <strong>3.54 million</strong> Malaysians. For every ringgit spent
-          abroad, Malaysia earns <strong>RM2.60</strong> back from
-          inbound visitors.
+          Tourism is one of Malaysia's most important economic pillars
+          contributing to GDP, generating a sustained trade surplus, and
+          supporting millions of jobs. By 2024, the sector had not just
+          recovered from COVID; it had surpassed every pre-pandemic benchmark.
         </p>
       </div>
 
       <div class="grid-2">
         <div class="chart-block">
           <h3 class="chart-title">Inbound vs Outbound Tourism Spending</h3>
-          <p class="chart-note">Malaysia earned RM2.60 for every RM1.00 spent overseas in 2024.</p>
+          <p class="chart-note">Lines show annual inbound vs outbound spending. In 2024, Malaysia earned RM107B from visitors while spending RM42B abroad: a 2.6× surplus, wider than the pre-COVID peak.</p>
           <div id="vis-spending" class="vis-container"></div>
           <p class="chart-source">Source: Jabatan Perangkaan Malaysia; DOSM</p>
         </div>
 
         <div class="chart-block">
           <h3 class="chart-title">Tourism GVA by Sector 2018–2024</h3>
-          <p class="chart-note">Stream width = each sector's share of total GVA.
-            <br />Retail trade has consistently dominated. Click a legend item to highlight a sector.</p>
+          <p class="chart-note">Total tourism GVA reached RM292 billion in 2024, up 22% from its 2021 low. Retail trade alone accounts for 53 cents of every ringgit of tourism value, and it is the only sector whose stream never shrank during COVID. Click a sector to highlight it.</p>
           <div id="vis-streamgraph" class="vis-container"></div>
           <p class="chart-source">Source: Jabatan Perangkaan Malaysia; DOSM</p>
         </div>
@@ -242,14 +234,13 @@
 
       <div class="chart-block chart-block--full">
         <h3 class="chart-title">Tourism Employment by Sector 2016–2024</h3>
-        <p class="chart-note">Retail trade and food &amp; beverage have consistently dominated tourism employment across all years. 
-          <br />Total jobs peaked at 3.61 million in 2022, dipped during COVID, and partially recovered to 3.54 million by 2024.</p>
+        <p class="chart-note">Retail trade and F&amp;B employ 3 in every 4 tourism workers. Jobs peaked at 3.61M in 2022 and have partially recovered to 3.54M by 2024.</p>
         <div id="vis-employment" class="vis-container"></div>
         <p class="chart-source">Source: Jabatan Perangkaan Malaysia; DOSM</p>
       </div>
     </div>
   </section>
-  
+
   <footer class="page-footer">
     <div class="container">
       <div class="footer-grid">

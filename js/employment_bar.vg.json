@@ -1,0 +1,66 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Stacked bar chart — tourism employment by sector 2016–2024",
+  "width": "container",
+  "height": 300,
+  "config": { "view": { "stroke": null } },
+  "data": { "url": "https://raw.githubusercontent.com/YinYing6/2179/refs/heads/main/data/employment_long.csv" },
+  "params": [{
+    "name": "sector_select",
+    "select": { "type": "point", "fields": ["sector"] },
+    "bind": "legend"
+  }],
+  "mark": { "type": "bar", "width": { "band": 0.7 } },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "axis": { "title": null, "labelFontSize": 11, "grid": false }
+    },
+    "y": {
+      "field": "employees_thousand",
+      "type": "quantitative",
+      "stack": "zero",
+      "axis": {
+        "title": "Employees ('000)",
+        "grid": true,
+        "gridColor": "#e8e8e8",
+        "format": ",.0f"
+      }
+    },
+    "color": {
+      "field": "sector",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Retail Trade",
+          "Food & Beverage Services",
+          "Country-specific Tourism Services",
+          "Accommodation Services",
+          "Passenger Transport",
+          "Cultural, Sports & Recreation",
+          "Retail Sale of Automotive Fuel",
+          "Travel Agencies & Reservation"
+        ],
+        "range": ["#003399","#0099CC","#66CCEE","#FFCC00","#FF8C00","#CC6600","#AA4499","#888888"]
+      },
+      "legend": {
+        "title": "Sector",
+        "orient": "right",
+        "labelFontSize": 10.5,
+        "labelLimit": 200,
+        "symbolSize": 120
+      }
+    },
+    "order": { "field": "sector_rank", "type": "quantitative", "sort": "ascending" },
+    "opacity": {
+      "condition": { "param": "sector_select", "value": 1 },
+      "value": 0.2
+    },
+    "tooltip": [
+      { "field": "year",               "title": "Year" },
+      { "field": "sector",             "title": "Sector" },
+      { "field": "employees_thousand", "title": "Employees ('000)", "format": ",.1f" }
+    ]
+  }
+}

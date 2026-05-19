@@ -1,0 +1,56 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Streamgraph of Tourism GVA by sector 2018–2024",
+  "width": "container",
+  "height": 300,
+  "config": { "view": { "stroke": null } },
+  "data": { "url": "https://raw.githubusercontent.com/YinYing6/2179/refs/heads/main/data/gva_long.csv" },
+  "params": [{
+    "name": "sector_select",
+    "select": { "type": "point", "fields": ["sector"] },
+    "bind": "legend"
+  }],
+  "mark": { "type": "area", "interpolate": "monotone" },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "axis": {
+        "title": null,
+        "labelFontSize": 11,
+        "grid": true,
+        "gridColor": "#d8d8d8",
+        "gridWidth": 1
+      }
+    },
+    "y": {
+      "field": "gva_rm_million",
+      "type": "quantitative",
+      "stack": "center",
+      "axis": null
+    },
+    "color": {
+      "field": "sector",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Retail Trade","Food & Beverage","Tourism Services","Accommodation","Transport","Cultural & Sports","Automotive Fuel","Travel Agencies"],
+        "range": ["#003399","#0099CC","#66CCEE","#FFCC00","#FF8C00","#CC6600","#AA4499","#888888"]
+      },
+      "legend": {
+        "title": "Sector",
+        "orient": "right",
+        "labelFontSize": 11,
+        "symbolSize": 200
+      }
+    },
+    "opacity": {
+      "condition": { "param": "sector_select", "value": 1 },
+      "value": 0.2
+    },
+    "tooltip": [
+      { "field": "year",           "title": "Year" },
+      { "field": "sector",         "title": "Sector" },
+      { "field": "gva_rm_million", "title": "GVA (RM mil)", "format": ",.0f" }
+    ]
+  }
+}

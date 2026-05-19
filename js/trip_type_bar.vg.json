@@ -1,0 +1,60 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Grouped bar chart — domestic trip types 2023 vs 2024",
+  "width": "container",
+  "height": 260,
+  "config": { "view": { "stroke": null } },
+  "data": { "url": "https://raw.githubusercontent.com/YinYing6/2179/refs/heads/main/data/trip_type_long.csv" },
+  "transform": [
+    {
+      "calculate": "datum.trips_thousand / 1000",
+      "as": "trips_million"
+    }
+  ],
+  "mark": { "type": "bar", "cornerRadiusEnd": 3 },
+  "encoding": {
+    "y": {
+      "field": "trip_type",
+      "type": "nominal",
+      "axis": {
+        "title": null,
+        "labelFontSize": 11,
+        "grid": false
+      },
+      "sort": ["Family – Overnight", "Family – Same Day", "Individual – Overnight", "Individual – Same Day"]
+    },
+    "x": {
+      "field": "trips_million",
+      "type": "quantitative",
+      "axis": {
+        "title": "Trips (millions)",
+        "grid": true,
+        "gridColor": "#e8e8e8",
+        "format": ".0f"
+      }
+    },
+    "yOffset": {
+      "field": "year",
+      "type": "ordinal"
+    },
+    "color": {
+      "field": "year",
+      "type": "ordinal",
+      "scale": {
+        "domain": ["2023", "2024"],
+        "range": ["#66CCEE", "#003399"]
+      },
+      "legend": {
+        "title": null,
+        "orient": "bottom",
+        "symbolSize": 120,
+        "labelFontSize": 12
+      }
+    },
+    "tooltip": [
+      { "field": "trip_type", "title": "Trip Type" },
+      { "field": "year", "title": "Year" },
+      { "field": "trips_million", "title": "Trips (millions)", "format": ".1f" }
+    ]
+  }
+}

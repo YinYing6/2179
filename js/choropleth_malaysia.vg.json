@@ -1,0 +1,57 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Choropleth map of Malaysia showing domestic visitors by state",
+  "width": 800,
+  "height": 420,
+  "autosize": { "type": "fit", "contains": "padding" },
+  "config": { "view": { "stroke": null } },
+  "params": [
+    {
+      "name": "year_select",
+      "value": 2024,
+      "bind": {
+        "input": "range",
+        "min": 2017,
+        "max": 2024,
+        "step": 1,
+        "name": "Year: "
+      }
+    }
+  ],
+  "projection": { "type": "mercator" },
+  "data": {
+    "url": "https://raw.githubusercontent.com/YinYing6/2179/refs/heads/main/data/malaysia-states.topojson",
+    "format": { "type": "topojson", "feature": "states" }
+  },
+  "transform": [
+    {
+      "lookup": "properties.Name",
+      "from": {
+        "data": { "url": "https://raw.githubusercontent.com/YinYing6/2179/refs/heads/main/data/domestic_visitors_clean.csv" },
+        "key": "state_topo",
+        "fields": ["State","2017","2018","2019","2020","2021","2022","2023","2024"]
+      }
+    },
+    {
+      "calculate": "year_select === 2017 ? +datum['2017'] : year_select === 2018 ? +datum['2018'] : year_select === 2019 ? +datum['2019'] : year_select === 2020 ? +datum['2020'] : year_select === 2021 ? +datum['2021'] : year_select === 2022 ? +datum['2022'] : year_select === 2023 ? +datum['2023'] : +datum['2024']",
+      "as": "visitors"
+    }
+  ],
+  "mark": { "type": "geoshape", "stroke": "#ffffff", "strokeWidth": 0.8 },
+  "encoding": {
+    "color": {
+      "field": "visitors",
+      "type": "quantitative",
+      "scale": { "scheme": "tealblues", "domain": [0, 35000] },
+      "legend": {
+        "title": "Visitors ('000)",
+        "orient": "bottom-right",
+        "gradientLength": 150
+      }
+    },
+    "tooltip": [
+      { "field": "State",    "title": "State" },
+      { "field": "visitors", "title": "Visitors ('000)", "format": ",.0f" }
+    ]
+  }
+}

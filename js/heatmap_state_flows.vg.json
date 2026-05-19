@@ -1,0 +1,54 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Heatmap of domestic tourist flows between Malaysian states (2024)",
+  "width": "container",
+  "height": 460,
+  "config": { "view": { "stroke": null } },
+  "data": { "url": "https://raw.githubusercontent.com/YinYing6/2179/refs/heads/main/data/tourists_flows_long.csv" },
+  "transform": [
+    { "filter": "datum.origin !== 'Malaysia' && datum.destination !== 'Malaysia'" },
+    {
+      "calculate": "datum.origin === 'W.P. Kuala Lumpur' ? 'KL' : datum.origin === 'W.P. Putrajaya' ? 'Putrajaya' : datum.origin === 'W.P. Labuan' ? 'Labuan' : datum.origin === 'Pulau Pinang' ? 'Penang' : datum.origin",
+      "as": "origin_short"
+    },
+    {
+      "calculate": "datum.destination === 'W.P. Kuala Lumpur' ? 'KL' : datum.destination === 'W.P. Putrajaya' ? 'Putrajaya' : datum.destination === 'W.P. Labuan' ? 'Labuan' : datum.destination === 'Pulau Pinang' ? 'Penang' : datum.destination",
+      "as": "destination_short"
+    }
+  ],
+  "mark": { "type": "rect", "cornerRadius": 1 },
+  "encoding": {
+    "x": {
+      "field": "destination_short",
+      "type": "ordinal",
+      "title": "State Visited",
+      "sort": ["Selangor","KL","Johor","Perak","Pahang","Sabah","Sarawak","Melaka","Kedah","Negeri Sembilan","Penang","Kelantan","Terengganu","Perlis","Labuan","Putrajaya"],
+      "axis": { "labelAngle": -45, "labelFontSize": 10 }
+    },
+    "y": {
+      "field": "origin_short",
+      "type": "ordinal",
+      "title": "State of Origin",
+      "sort": ["Selangor","KL","Johor","Perak","Pahang","Sabah","Sarawak","Melaka","Kedah","Negeri Sembilan","Penang","Kelantan","Terengganu","Perlis","Labuan","Putrajaya"],
+      "axis": { "labelFontSize": 10 }
+    },
+    "color": {
+      "field": "visitors",
+      "type": "quantitative",
+      "scale": {
+        "scheme": "blues",
+        "type": "sqrt"
+      },
+      "legend": {
+        "title": "Visitors ('000)",
+        "orient": "bottom",
+        "gradientLength": 200
+      }
+    },
+    "tooltip": [
+      { "field": "origin", "title": "Origin" },
+      { "field": "destination", "title": "Destination" },
+      { "field": "visitors", "title": "Visitors ('000)", "format": ",.1f" }
+    ]
+  }
+}

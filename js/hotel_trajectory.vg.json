@@ -1,0 +1,85 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Connected scatter plot — hotel occupancy rate vs average length of stay 2019–2024",
+  "width": "container",
+  "height": 300,
+  "config": { "view": { "stroke": null } },
+  "data": { "url": "https://raw.githubusercontent.com/YinYing6/2179/refs/heads/main/data/hotel_trajectory.csv" },
+  "layer": [
+    {
+      "mark": { "type": "line", "color": "#cccccc", "strokeWidth": 2 },
+      "encoding": {
+        "x": {
+          "field": "occupancy_rate",
+          "type": "quantitative",
+          "scale": { "domain": [24, 65] },
+          "axis": {
+            "title": "Avg Occupancy Rate (%)",
+            "grid": true,
+            "gridColor": "#e8e8e8",
+            "labelFontSize": 11
+          }
+        },
+        "y": {
+          "field": "avg_stay_nights",
+          "type": "quantitative",
+          "scale": { "domain": [2.5, 8.5] },
+          "axis": {
+            "title": "Avg Length of Stay (nights)",
+            "grid": true,
+            "gridColor": "#e8e8e8",
+            "labelFontSize": 11
+          }
+        },
+        "order": { "field": "year", "type": "quantitative" }
+      }
+    },
+    {
+      "mark": { "type": "point", "filled": true, "size": 220 },
+      "encoding": {
+        "x": { "field": "occupancy_rate", "type": "quantitative" },
+        "y": { "field": "avg_stay_nights", "type": "quantitative" },
+        "color": {
+          "field": "year",
+          "type": "ordinal",
+          "scale": {
+            "domain": ["2019", "2020", "2022", "2023", "2024"],
+            "range": ["#003399", "#CC6600", "#AA4499", "#FF8C00", "#0099CC"]
+          },
+          "legend": {
+            "title": "Year",
+            "orient": "bottom",
+            "direction": "horizontal",
+            "labelFontSize": 11,
+            "symbolSize": 150
+          }
+        },
+        "tooltip": [
+          { "field": "year",            "title": "Year" },
+          { "field": "occupancy_rate",  "title": "Occupancy Rate (%)",  "format": ".1f" },
+          { "field": "avg_stay_nights", "title": "Avg Stay (nights)",   "format": ".1f" }
+        ]
+      }
+    },
+    {
+      "mark": { "type": "text", "dy": -14, "fontSize": 11, "fontWeight": 600, "color": "#3a3a3c" },
+      "encoding": {
+        "x": { "field": "occupancy_rate",  "type": "quantitative" },
+        "y": { "field": "avg_stay_nights", "type": "quantitative" },
+        "text": { "field": "year", "type": "ordinal" }
+      }
+    },
+    {
+      "data": { "values": [
+        { "x": 41, "y": 6.1, "label": "COVID collapse ↙" },
+        { "x": 51, "y": 3.3, "label": "Recovery ↗" }
+      ]},
+      "mark": { "type": "text", "fontSize": 10, "fontStyle": "italic", "color": "#888888" },
+      "encoding": {
+        "x": { "field": "x", "type": "quantitative" },
+        "y": { "field": "y", "type": "quantitative" },
+        "text": { "field": "label", "type": "nominal" }
+      }
+    }
+  ]
+}

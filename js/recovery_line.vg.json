@@ -1,0 +1,94 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Recovery of Malaysian tourism after COVID-19",
+  "width": "container",
+  "height": 280,
+  "config": { "view": { "stroke": null } },
+  "layer": [
+    {
+      "data": { "url": "https://raw.githubusercontent.com/YinYing6/2179/refs/heads/main/data/recovery_data.csv" },
+      "transform": [ { "filter": "datum.year >= 2017" } ],
+      "mark": {
+        "type": "line",
+        "strokeWidth": 2.5,
+        "point": { "filled": true, "size": 60 }
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative",
+          "scale": { "zero": false, "domain": [2017, 2024] },
+          "axis": { "format": "d", "title": null, "grid": false, "tickCount": 6 }
+        },
+        "y": {
+          "field": "domestic_thousands",
+          "type": "quantitative",
+          "axis": {
+            "title": "Domestic Visitors ('000)",
+            "orient": "left",
+            "grid": true,
+            "gridColor": "#e8e8e8",
+            "format": ",.0f"
+          }
+        },
+        "color": { "value": "#003399" },
+        "tooltip": [
+          { "field": "year", "title": "Year", "format": "d" },
+          { "field": "domestic_thousands", "title": "Domestic Visitors ('000)", "format": ",.0f" }
+        ]
+      }
+    },
+    {
+      "data": { "url": "../data/recovery_data.csv" },
+      "transform": [ { "filter": "isValid(datum.inbound_thousands) && datum.year >= 2017" } ],
+      "mark": {
+        "type": "line",
+        "strokeWidth": 2.5,
+        "strokeDash": [4, 2],
+        "point": { "filled": true, "size": 60 }
+      },
+      "encoding": {
+        "x": { "field": "year", "type": "quantitative" },
+        "y": {
+          "field": "inbound_thousands",
+          "type": "quantitative",
+          "axis": {
+            "title": "Inbound Visitors ('000)",
+            "orient": "right",
+            "grid": false,
+            "format": ",.0f"
+          }
+        },
+        "color": { "value": "#FF8C00" },
+        "tooltip": [
+          { "field": "year", "title": "Year", "format": "d" },
+          { "field": "inbound_thousands", "title": "Inbound Visitors ('000)", "format": ",.0f" }
+        ]
+      }
+    },
+    {
+      "data": { "values": [
+        { "series": "Domestic Visitors ('000)" },
+        { "series": "Inbound Visitors ('000)" }
+      ]},
+      "mark": { "type": "point", "filled": true, "opacity": 0 },
+      "encoding": {
+        "color": {
+          "field": "series",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Domestic Visitors ('000)", "Inbound Visitors ('000)"],
+            "range": ["#003399", "#FF8C00"]
+          },
+          "legend": {
+            "title": null,
+            "orient": "bottom",
+            "labelFontSize": 11,
+            "symbolSize": 150
+          }
+        }
+      }
+    }
+  ],
+  "resolve": { "scale": { "y": "independent" } }
+}

@@ -1,0 +1,64 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Tourism Direct GDP 2018–2024",
+  "width": "container",
+  "height": 260,
+  "config": { "view": { "stroke": null } },
+  "layer": [
+    {
+      "data": { "url": "https://raw.githubusercontent.com/YinYing6/2179/refs/heads/main/data/tourism_gdp_clean.csv" },
+      "mark": {
+        "type": "area",
+        "line": { "color": "#003399", "strokeWidth": 2.5 },
+        "color": { "x1": 1, "y1": 1, "x2": 1, "y2": 0,
+          "gradient": "linear",
+          "stops": [
+            { "offset": 0, "color": "white" },
+            { "offset": 1, "color": "#66CCEE" }
+          ]
+        }
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "axis": { "title": null, "labelFontSize": 12, "grid": false }
+        },
+        "y": {
+          "field": "direct_gdp",
+          "type": "quantitative",
+          "axis": {
+            "title": "RM million",
+            "grid": true,
+            "gridColor": "#e8e8e8",
+            "format": ",.0f"
+          }
+        },
+        "tooltip": [
+          { "field": "year", "title": "Year" },
+          { "field": "direct_gdp", "title": "Tourism Direct GDP (RM mil)", "format": ",.0f" }
+        ]
+      }
+    },
+    {
+      "data": { "values": [
+        { "year": "2019", "y": 102272, "label": "Pre-COVID\nRM 102B" },
+        { "year": "2021", "y": 20000, "label": "COVID low\nRM 13B" },
+        { "year": "2024", "y": 120306, "label": "New record\nRM 120B" }
+      ]},
+      "mark": {
+        "type": "text",
+        "fontSize": 9.5,
+        "fontWeight": 600,
+        "lineBreak": "\n",
+        "dy": -22
+      },
+      "encoding": {
+        "x": { "field": "year", "type": "ordinal" },
+        "y": { "field": "y", "type": "quantitative" },
+        "text": { "field": "label" },
+        "color": { "value": "#003d4d" }
+      }
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Bump chart showing source country rankings to Malaysia 2019–2024 — band width ∝ visitor count",
+  "width": "container",
+  "height": 340,
+  "padding": { "right": 95 },
+  "config": { "view": { "stroke": null } },
+  "data": { "url": "https://raw.githubusercontent.com/YinYing6/2179/refs/heads/main/data/inbound_ranks.csv" },
+  "layer": [
+    {
+      "mark": { "type": "trail", "strokeCap": "butt" },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "axis": { "title": null, "labelFontSize": 12, "grid": false }
+        },
+        "y": {
+          "field": "rank",
+          "type": "quantitative",
+          "scale": { "domain": [8.6, 0.4] },
+          "axis": {
+            "title": "Ranking",
+            "tickCount": 8,
+            "values": [1,2,3,4,5,6,7,8],
+            "grid": true,
+            "gridColor": "#e8e8e8",
+            "labelExpr": "datum.value + (datum.value === 1 ? 'st' : datum.value === 2 ? 'nd' : datum.value === 3 ? 'rd' : 'th')"
+          }
+        },
+        "size": {
+          "field": "visitors",
+          "type": "quantitative",
+          "scale": { "type": "sqrt", "domain": [0, 20000000], "range": [1, 30] },
+          "legend": null
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Singapore","Indonesia","China","Thailand","Brunei Darussalam","India","South Korea","Philippines"],
+            "range": ["#003399","#0099CC","#FFCC00","#FF8C00","#AA4499","#CC6600","#66CCEE","#888888"]
+          },
+          "legend": null
+        }
+      }
+    },
+    {
+      "mark": { "type": "point", "filled": true, "size": 55, "opacity": 0 },
+      "encoding": {
+        "x": { "field": "year", "type": "ordinal" },
+        "y": { "field": "rank", "type": "quantitative" },
+        "color": {
+          "field": "country",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Singapore","Indonesia","China","Thailand","Brunei Darussalam","India","South Korea","Philippines"],
+            "range": ["#003399","#0099CC","#FFCC00","#FF8C00","#AA4499","#CC6600","#66CCEE","#888888"]
+          }
+        },
+        "tooltip": [
+          { "field": "country",  "title": "Country" },
+          { "field": "year",     "title": "Year" },
+          { "field": "rank",     "title": "Rank" },
+          { "field": "visitors", "title": "Visitors", "format": ",.0f" }
+        ]
+      }
+    },
+    {
+      "transform": [
+        { "filter": "datum.year == '2024'" }
+      ],
+      "mark": { "type": "text", "align": "left", "dx": 20, "fontSize": 11, "fontWeight": 600, "clip": false },
+      "encoding": {
+        "x": { "field": "year", "type": "ordinal" },
+        "y": { "field": "rank", "type": "quantitative" },
+        "text": { "field": "label", "type": "nominal" },
+        "color": {
+          "field": "country",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Singapore","Indonesia","China","Thailand","Brunei Darussalam","India","South Korea","Philippines"],
+            "range": ["#003399","#0099CC","#FFCC00","#FF8C00","#AA4499","#CC6600","#66CCEE","#888888"]
+          }
+        }
+      }
+    },
+    {
+      "data": { "values": [{ "x": "2021", "label": "Thailand #1 while Singapore border closed", "rank": 0.5 }] },
+      "mark": { "type": "text", "fontSize": 9, "fontStyle": "italic", "color": "#c47c35", "align": "center", "clip": false },
+      "encoding": {
+        "x": { "field": "x", "type": "ordinal" },
+        "y": { "field": "rank", "type": "quantitative" },
+        "text": { "field": "label", "type": "nominal" }
+      }
+    }
+  ]
+}

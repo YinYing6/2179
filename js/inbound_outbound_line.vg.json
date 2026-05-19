@@ -1,0 +1,66 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Inbound vs outbound tourism spending (RM million) 2018–2024",
+  "width": "container",
+  "height": 280,
+  "config": { "view": { "stroke": null } },
+  "data": { "url": "https://raw.githubusercontent.com/YinYing6/2179/refs/heads/main/data/inbound_outbound_spending.csv" },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 2.5,
+        "point": { "filled": true, "size": 60 }
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "axis": { "title": null, "labelFontSize": 11, "grid": false }
+        },
+        "y": {
+          "field": "spending_rm_million",
+          "type": "quantitative",
+          "axis": {
+            "title": "Spending (RM million)",
+            "format": ",.0f",
+            "grid": true,
+            "gridColor": "#e8e8e8"
+          }
+        },
+        "color": {
+          "field": "direction",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Inbound", "Outbound"],
+            "range": ["#003399", "#FF8C00"]
+          },
+          "legend": { "title": null, "orient": "bottom" }
+        },
+        "tooltip": [
+          { "field": "year", "title": "Year" },
+          { "field": "direction", "title": "Direction" },
+          { "field": "spending_rm_million", "title": "Spending (RM mil)", "format": ",.0f" }
+        ]
+      }
+    },
+    {
+      "data": { "values": [{ "year": "2024", "y": 107029, "label": "RM 107B inbound" }] },
+      "mark": { "type": "text", "align": "right", "dx": -6, "fontSize": 10, "fontWeight": "bold", "color": "#003399" },
+      "encoding": {
+        "x": { "field": "year", "type": "ordinal" },
+        "y": { "field": "y", "type": "quantitative" },
+        "text": { "field": "label", "type": "nominal" }
+      }
+    },
+    {
+      "data": { "values": [{ "year": "2024", "y": 45000, "label": "RM 42B outbound" }] },
+      "mark": { "type": "text", "align": "right", "dx": -6, "fontSize": 10, "fontWeight": "bold", "color": "#CC6600" },
+      "encoding": {
+        "x": { "field": "year", "type": "ordinal" },
+        "y": { "field": "y", "type": "quantitative" },
+        "text": { "field": "label", "type": "nominal" }
+      }
+    }
+  ]
+}

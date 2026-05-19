@@ -1,0 +1,69 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Quarterly domestic visitor numbers 2021–2025",
+  "width": "container",
+  "height": 260,
+  "config": { "view": { "stroke": null } },
+  "data": { "url": "https://raw.githubusercontent.com/YinYing6/2179/refs/heads/main/data/quarterly_domestic_visitors.csv" },
+  "layer": [
+    {
+      "mark": { "type": "area", "opacity": 0.25, "color": "#003399" },
+      "encoding": {
+        "x": {
+          "field": "period",
+          "type": "ordinal",
+          "sort": null,
+          "axis": {
+            "labelAngle": -45,
+            "labelFontSize": 9,
+            "title": null,
+            "grid": false,
+            "labelExpr": "indexof(datum.label, 'Q1') >= 0 ? substring(datum.label, 0, 4) : ''"
+          }
+        },
+        "y": {
+          "field": "visitors_thousands",
+          "type": "quantitative",
+          "axis": {
+            "title": "Domestic Visitors ('000)",
+            "format": ",.0f",
+            "grid": true,
+            "gridColor": "#e8e8e8"
+          }
+        }
+      }
+    },
+    {
+      "mark": { "type": "line", "color": "#003399", "strokeWidth": 2 },
+      "encoding": {
+        "x": { "field": "period", "type": "ordinal", "sort": null },
+        "y": { "field": "visitors_thousands", "type": "quantitative" }
+      }
+    },
+    {
+      "mark": { "type": "point", "color": "#003399", "filled": true, "size": 40 },
+      "encoding": {
+        "x": { "field": "period", "type": "ordinal", "sort": null },
+        "y": { "field": "visitors_thousands", "type": "quantitative" },
+        "tooltip": [
+          { "field": "period", "title": "Quarter" },
+          { "field": "visitors_thousands", "title": "Visitors ('000)", "format": ",.0f" },
+          { "field": "expenditure_rm_million", "title": "Expenditure (RM mil)", "format": ",.0f" },
+          { "field": "yoy_pct", "title": "YoY Change (%)" }
+        ]
+      }
+    },
+    {
+      "data": { "values": [{ "x": "2021-Q3" }] },
+      "mark": {
+        "type": "rule",
+        "color": "#FF8C00",
+        "strokeDash": [4, 2],
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": { "field": "x", "type": "ordinal" }
+      }
+    }
+  ]
+}

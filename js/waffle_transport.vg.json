@@ -1,0 +1,49 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Waffle chart — mode of transport for domestic tourists 2024",
+  "width": 260,
+  "height": 260,
+  "config": { "view": { "stroke": null } },
+  "data": { "url": "https://raw.githubusercontent.com/YinYing6/2179/refs/heads/main/data/waffle_transport.csv" },
+  "mark": {
+    "type": "rect",
+    "width": 22,
+    "height": 22,
+    "cornerRadius": 3
+  },
+  "encoding": {
+    "x": {
+      "field": "col",
+      "type": "ordinal",
+      "axis": null
+    },
+    "y": {
+      "field": "row",
+      "type": "ordinal",
+      "axis": null
+    },
+    "color": {
+      "field": "mode",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Private Vehicle (90.9%)",
+          "Taxi / e-Hailing (4.1%)",
+          "Bus (3.9%)",
+          "Train / Air / Water (1.1%)"
+        ],
+        "range": ["#003399", "#FF8C00", "#FFCC00", "#AA4499"]
+      },
+      "legend": {
+        "title": null,
+        "orient": "bottom",
+        "columns": 2,
+        "symbolSize": 80,
+        "labelFontSize": 11
+      }
+    },
+    "tooltip": [
+      { "field": "mode", "title": "Mode" }
+    ]
+  }
+}

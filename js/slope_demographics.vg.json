@@ -1,0 +1,108 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Slope chart showing demographic shifts in domestic tourists 2023 vs 2024",
+  "config": { "view": { "stroke": null } },
+  "data": { "url": "https://raw.githubusercontent.com/YinYing6/2179/refs/heads/main/data/demographics_slope.csv" },
+  "facet": {
+    "field": "group",
+    "type": "nominal",
+    "columns": 3,
+    "header": {
+      "title": null,
+      "labelFontSize": 12,
+      "labelFontWeight": "bold",
+      "labelColor": "#1c1c1e"
+    }
+  },
+  "spec": {
+    "width": 180,
+    "height": 260,
+    "layer": [
+      {
+        "mark": { "type": "line", "strokeWidth": 2 },
+        "encoding": {
+          "x": {
+            "field": "year",
+            "type": "ordinal",
+            "axis": {
+              "title": null,
+              "labelFontSize": 11,
+              "domainColor": "#cccccc",
+              "tickColor": "#cccccc"
+            }
+          },
+          "y": {
+            "field": "percentage",
+            "type": "quantitative",
+            "axis": { "title": "Share (%)", "grid": true, "gridColor": "#e8e8e8" }
+          },
+          "color": {
+            "field": "direction",
+            "type": "nominal",
+            "scale": {
+              "domain": ["Increased", "Decreased", "Unchanged"],
+              "range": ["#003399", "#FF8C00", "#888888"]
+            },
+            "legend": { "title": "Change", "orient": "bottom", "labelFontSize": 11, "symbolSize": 120 }
+          },
+          "detail": { "field": "category", "type": "nominal" },
+          "tooltip": [
+            { "field": "category", "title": "Category" },
+            { "field": "year", "title": "Year" },
+            { "field": "percentage", "title": "Share (%)", "format": ".1f" }
+          ]
+        }
+      },
+      {
+        "mark": { "type": "point", "filled": true, "size": 50 },
+        "encoding": {
+          "x": { "field": "year", "type": "ordinal" },
+          "y": { "field": "percentage", "type": "quantitative" },
+          "color": {
+            "field": "direction",
+            "type": "nominal",
+            "scale": {
+              "domain": ["Increased", "Decreased", "Unchanged"],
+              "range": ["#003399", "#FF8C00", "#888888"]
+            }
+          },
+          "detail": { "field": "category", "type": "nominal" },
+          "tooltip": [
+            { "field": "category",   "title": "Category" },
+            { "field": "year",       "title": "Year" },
+            { "field": "percentage", "title": "Share (%)", "format": ".1f" }
+          ]
+        }
+      },
+      {
+        "transform": [ { "filter": "datum.year === '2023'" } ],
+        "mark": { "type": "text", "align": "right", "dx": -8, "fontSize": 8.5 },
+        "encoding": {
+          "x": { "field": "year", "type": "ordinal" },
+          "y": { "field": "percentage", "type": "quantitative" },
+          "text": { "field": "category", "type": "nominal" },
+          "color": {
+            "field": "direction",
+            "type": "nominal",
+            "scale": {
+              "domain": ["Increased", "Decreased", "Unchanged"],
+              "range": ["#003399", "#FF8C00", "#888888"]
+            }
+          },
+          "detail": { "field": "category", "type": "nominal" }
+        }
+      },
+      {
+        "transform": [ { "filter": "datum.year === '2024'" } ],
+        "mark": { "type": "text", "align": "left", "dx": 8, "fontSize": 8.5 },
+        "encoding": {
+          "x": { "field": "year", "type": "ordinal" },
+          "y": { "field": "percentage", "type": "quantitative" },
+          "text": { "field": "percentage", "type": "quantitative", "format": ".1f" },
+          "color": { "value": "#6e6e73" },
+          "detail": { "field": "category", "type": "nominal" }
+        }
+      }
+    ]
+  }
+}

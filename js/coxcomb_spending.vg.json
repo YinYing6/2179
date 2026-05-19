@@ -1,0 +1,70 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Coxcomb chart — tourist spending breakdown 2024 (ascending by share)",
+  "width": 400,
+  "height": 350,
+  "config": { "view": { "stroke": null } },
+  "data": { "url": "https://raw.githubusercontent.com/YinYing6/2179/refs/heads/main/data/coxcomb_spending.csv" },
+  "params": [{
+    "name": "sector_select",
+    "select": { "type": "point", "fields": ["category"] },
+    "bind": "legend"
+  }],
+  "mark": {
+    "type": "arc",
+    "innerRadius": 30,
+    "stroke": "#ffffff",
+    "strokeWidth": 1.5
+  },
+  "encoding": {
+    "theta":  {
+      "field": "a0",
+      "type": "quantitative",
+      "scale": null,
+      "stack": null
+    },
+    "theta2": {
+      "field": "a1",
+      "type": "quantitative",
+      "scale": null
+    },
+    "radius": {
+      "field": "share",
+      "type": "quantitative",
+      "scale": { "type": "sqrt", "domain": [0, 40], "range": [30, 170] }
+    },
+    "color": {
+      "field": "category",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Pre-trip & Packages",
+          "Other Activities",
+          "Transport",
+          "Visiting Friends/Family",
+          "Accommodation",
+          "Automotive Fuel",
+          "Food & Beverage",
+          "Shopping"
+        ],
+        "range": ["#888888","#AA4499","#66CCEE","#FFCC00","#FF8C00","#CC6600","#0099CC","#003399"]
+      },
+      "legend": {
+        "title": "Spending Category",
+        "orient": "right",
+        "columns": 1,
+        "labelFontSize": 11,
+        "labelLimit": 200,
+        "symbolSize": 200
+      }
+    },
+    "opacity": {
+      "condition": { "param": "sector_select", "value": 1 },
+      "value": 0.2
+    },
+    "tooltip": [
+      { "field": "category", "title": "Category" },
+      { "field": "share",    "title": "Share of Spending (%)", "format": ".1f" }
+    ]
+  }
+}
