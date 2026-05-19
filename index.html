@@ -1,11 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First HTML Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Malaysia Tourism Dashboard — A Nation's Comeback</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Vega-Lite -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <h1>Heading 1</h1>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <p class="hero-eyebrow">Malaysian Tourism 2017–2025</p>
+      <h1 class="hero-title">A Nation's Comeback</h1>
+      <p class="hero-subtitle">
+        In 2020, arrivals collapsed. By 2024, Malaysia broke records in every metric.
+        Explore the data behind Southeast Asia's most remarkable tourism comeback.
+      </p>
+
+      <div class="stat-cards">
+        <div class="stat-card">
+          <span class="stat-num">37.96<span class="stat-unit">M</span></span>
+          <span class="stat-label">Inbound visitors in 2024</span>
+          <span class="stat-note">All-time record, +8.3% above 2019</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">RM107<span class="stat-unit">B</span></span>
+          <span class="stat-label">Inbound tourism spending</span>
+          <span class="stat-note">+19.7% vs prior year</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">260<span class="stat-unit">M</span></span>
+          <span class="stat-label">Domestic visitor trips</span>
+          <span class="stat-note">+21.7% annual growth</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">3.54<span class="stat-unit">M</span></span>
+          <span class="stat-label">Tourism jobs</span>
+          <span class="stat-note">Full recovery from pandemic lows</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SECTION 1 — COLLAPSE AND RECOVERY -->
+  <section class="section" id="recovery">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">The Collapse and the Comeback</h2>
+        <p class="section-intro">
+          Inbound arrivals fell <strong>98.8%</strong> in a single year —
+          from <strong>35 million</strong> to just <strong>400,000</strong> visitors.
+          Domestic travel halved overnight. Yet by 2024, both had not just
+          recovered but set all-time records. The charts below show how fast,
+          and how unevenly, the rebound unfolded.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="chart-block">
+          <h3 class="chart-title">Visitor Arrivals 2017–2024</h3>
+          <p class="chart-note">Both collapsed in 2020 and set all-time records by 2024. Domestic on the left axis; inbound visitors (in thousands) on the right.</p>
+          <div id="vis-recovery" class="vis-container"></div>
+          <p class="chart-source">Source: Department of Statistics Malaysia (DOSM); Lembaga Penggalakan Pelancongan Malaysia (Tourism Malaysia) </p>
+        </div>
+
+        <div class="chart-block">
+          <h3 class="chart-title">Quarterly Domestic Visitors 2021–2025</h3>
+          <p class="chart-note">After the October 2021 border reopening, quarterly visitors multiplied sixfold — from 11 million to over 73 million per quarter by 2025.</p>
+          <div id="vis-quarterly" class="vis-container"></div>
+          <p class="chart-source">Source: DOSM Domestic Tourism Survey</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2 — WHERE MALAYSIA TRAVELS -->
+  <section class="section section-alt" id="domestic">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Where Malaysia Travels</h2>
+        <p class="section-intro">
+          <strong>Selangor</strong> generates and receives more domestic tourists
+          than any other state. Drag the year slider to trace how COVID
+          contracted demand across all states in 2020–2021, and how recovery
+          spread unevenly from 2022 onwards.
+        </p>
+      </div>
+
+      <div class="chart-block chart-block--full">
+        <h3 class="chart-title">Domestic Visitors Received by State</h3>
+        <div id="vis-choropleth" class="vis-container"></div>
+        <p class="chart-source">Source: Department of Statistics Malaysia (DOSM)</p>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <div class="chart-block chart-block--full">
+        <h3 class="chart-title">State-to-State Tourist Flows (2024)</h3>
+        <p class="chart-note">Row = origin state; column = destination state. Diagonal cells = trips within the same state. Selangor's row and column are the largest — it both sends and receives the most visitors.</p>
+        <div id="vis-heatmap" class="vis-container"></div>
+        <p class="chart-source">Source: Department of Statistics Malaysia (DOSM)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3 — INTERNATIONAL VISITORS -->
+  <section class="section" id="inbound">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Malaysia's Global Draw</h2>
+        <p class="section-intro">
+          <strong>Singapore</strong> accounts for nearly <strong>half</strong>
+          of all inbound arrivals — every year, without exception. But COVID
+          broke the pattern: Thailand seized the top spot in 2021 simply
+          because the Johor Causeway was shut. China's rebound stands out —
+          from near-zero in 2021 back to <strong>3rd place</strong> by 2024.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="chart-block">
+          <h3 class="chart-title">Source Country Rankings — How COVID Reshuffled the Table</h3>
+          <p class="chart-note">Vertical position = rank; band width = visitor volume. 
+            <br />Singapore's band dwarfs all others at ~18 million arrivals. Hover over any band for exact figures.</p>
+          <div id="vis-bump" class="vis-container"></div>
+          <p class="chart-source">Source: Lembaga Penggalakan Pelancongan Malaysia (Tourism Malaysia)</p>
+        </div>
+
+        <div class="chart-block">
+          <h3 class="chart-title">Hotel Performance Trajectory 2019–2024</h3>
+          <p class="chart-note">Each point is one year. Move right = higher occupancy; move up = longer stays. Both collapsed together in 2020 — but occupancy is recovering faster than how long guests stay.</p>
+          <div id="vis-hotel" class="vis-container"></div>
+          <p class="chart-source">Source: Lembaga Penggalakan Pelancongan Malaysia (Tourism Malaysia)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4 — WHO'S TRAVELLING -->
+  <section class="section section-alt" id="demographics">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Who's Behind the Boom</h2>
+        <p class="section-intro">
+          Malaysia's domestic tourist is getting older. The
+          <strong>40–54 age group</strong> grew from 23.5% to
+          <strong>27.4%</strong> while the 15–24 cohort shrank.
+          <strong>Bumiputera</strong> visitors now make up
+          <strong>63%</strong> of all domestic trips.
+        </p>
+      </div>
+
+      <div class="chart-block chart-block--full">
+        <h3 class="chart-title">Demographic Shifts in Domestic Tourists — 2023 to 2024</h3>
+        <p class="chart-note">Each line connects one group's share from 2023 (left) to 2024 (right). The 40–54 age group shows the sharpest upward shift.</p>
+        <div id="vis-slope" class="vis-container"></div>
+        <p class="chart-source">Source: Department of Statistics Malaysia (DOSM)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5 — HOW THEY TRAVEL -->
+  <section class="section" id="behaviour">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">How They Travel, Who Goes Together</h2>
+        <p class="section-intro">
+          <strong>9 in 10</strong> domestic trips are made by private vehicle —
+          Malaysia's road network makes the car the undisputed default.
+          The bigger story is who travels together: family trips surged
+          <strong>+28%</strong> in 2024 while solo travel fell sharply,
+          marking a clear post-pandemic turn toward group holidays.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="chart-block">
+          <h3 class="chart-title">Mode of Transport — 2024 Share</h3>
+          <p class="chart-note">Each square = 1% of all domestic trips. 
+            <br />Private vehicles fill 91 squares — air, rail, and water transport share the remaining 9.</p>
+          <div id="vis-waffle" class="vis-container" style="max-width:320px;"></div>
+          <p class="chart-source">Source: Department of Statistics Malaysia (DOSM)</p>
+        </div>
+
+        <div class="chart-block">
+          <h3 class="chart-title">Trip Type — 2023 vs 2024</h3>
+          <p class="chart-note">Family same-day trips surged by 51 million in 2024; individual overnight trips fell by nearly half. The post-pandemic shift is toward group, not solo travel.</p>
+          <div id="vis-trip-type" class="vis-container"></div>
+          <p class="chart-source">Source: Department of Statistics Malaysia (DOSM)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6 — ECONOMIC ENGINE -->
+  <section class="section section-alt" id="economy">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">The Economic Engine</h2>
+        <p class="section-intro">
+          Tourism's direct GDP hit <strong>RM120 billion</strong> in 2024 —
+          exceeding the pre-pandemic peak of RM102B. The sector employs
+          <strong>3.54 million</strong> Malaysians. For every ringgit spent
+          abroad, Malaysia earns <strong>RM2.60</strong> back from
+          inbound visitors.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="chart-block">
+          <h3 class="chart-title">Inbound vs Outbound Tourism Spending</h3>
+          <p class="chart-note">Malaysia earned RM2.60 for every RM1.00 spent overseas in 2024.</p>
+          <div id="vis-spending" class="vis-container"></div>
+          <p class="chart-source">Source: Jabatan Perangkaan Malaysia; DOSM</p>
+        </div>
+
+        <div class="chart-block">
+          <h3 class="chart-title">Tourism GVA by Sector 2018–2024</h3>
+          <p class="chart-note">Stream width = each sector's share of total GVA.
+            <br />Retail trade has consistently dominated. Click a legend item to highlight a sector.</p>
+          <div id="vis-streamgraph" class="vis-container"></div>
+          <p class="chart-source">Source: Jabatan Perangkaan Malaysia; DOSM</p>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <div class="chart-block chart-block--full">
+        <h3 class="chart-title">Tourism Employment by Sector 2016–2024</h3>
+        <p class="chart-note">Retail trade and food &amp; beverage have consistently dominated tourism employment across all years. 
+          <br />Total jobs peaked at 3.61 million in 2022, dipped during COVID, and partially recovered to 3.54 million by 2024.</p>
+        <div id="vis-employment" class="vis-container"></div>
+        <p class="chart-source">Source: Jabatan Perangkaan Malaysia; DOSM</p>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="page-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-heading">Data Sources</p>
+          <ul class="footer-list">
+            <li><a href="https://newss.statistics.gov.my/newss-portalx/ep/epFreeDownloadContentSearch.seam?contentId=202580&actionMethod=ep%2FepFreeDownloadContentSearch.xhtml%3AcontentAction.doDisplayContent&cid=297332" target="_blank">Department of Statistics Malaysia (DOSM)</a></li>
+            <li><a href="https://newss.statistics.gov.my/newss-portalx/ep/epFreeDownloadContentSearch.seam?contentId=207012&actionMethod=ep%2FepFreeDownloadContentSearch.xhtml%3AcontentAction.doDisplayContent&cid=298213" target="_blank">Jabatan Perangkaan Malaysia; DOSM</a></li>
+            <li><a href="https://newss.statistics.gov.my/newss-portalx/ep/epFreeDownloadContentSearch.seam?contentId=207012&actionMethod=ep%2FepFreeDownloadContentSearch.xhtml%3AcontentAction.doDisplayContent&cid=298213" target="_blank">Lembaga Penggalakan Pelancongan Malaysia (Tourism Malaysia)</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Author</p>
+          <p class="footer-text">
+            FIT2179 Data Visualization 2<br />
+            Name: Quah Yin Ying<br />
+            Student ID: 35174498
+          </p>
+          <p class="footer-text footer-date">Published May 2026</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    const embedOpts = { actions: false, renderer: "svg" };
+
+    vegaEmbed("#vis-recovery",    "js/recovery_line.vg.json",         embedOpts).catch(console.error);
+    vegaEmbed("#vis-quarterly",   "js/quarterly_area.vg.json",        embedOpts).catch(console.error);
+    vegaEmbed("#vis-choropleth",  "js/choropleth_malaysia.vg.json",   embedOpts).catch(console.error);
+    vegaEmbed("#vis-heatmap",     "js/heatmap_state_flows.vg.json",   embedOpts).catch(console.error);
+    vegaEmbed("#vis-bump",        "js/bump_chart.vg.json",            embedOpts).catch(console.error);
+    vegaEmbed("#vis-hotel",       "js/hotel_trajectory.vg.json",      embedOpts).catch(console.error);
+    vegaEmbed("#vis-slope",       "js/slope_demographics.vg.json",    embedOpts).catch(console.error);
+    vegaEmbed("#vis-waffle",      "js/waffle_transport.vg.json",      embedOpts).catch(console.error);
+    vegaEmbed("#vis-trip-type",   "js/trip_type_bar.vg.json",         embedOpts).catch(console.error);
+    vegaEmbed("#vis-spending",    "js/inbound_outbound_line.vg.json", embedOpts).catch(console.error);
+    vegaEmbed("#vis-streamgraph", "js/streamgraph_gva.vg.json",       embedOpts).catch(console.error);
+    vegaEmbed("#vis-employment",  "js/employment_bar.vg.json",        embedOpts).catch(console.error);
+  </script>
+
 </body>
 </html>

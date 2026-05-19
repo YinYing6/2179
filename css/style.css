@@ -1,0 +1,184 @@
+/* ─── TYPOGRAPHY ────────────────────────────────────────────────── */
+h1, h2, h3 {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #1c1c1e;
+}
+
+/* ─── HERO ──────────────────────────────────────────────────────── */
+.hero-eyebrow {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #94d2bd;
+  margin-bottom: 12px;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  font-weight: 300;
+  color: #b2d8e0;
+  max-width: 640px;
+  margin-top: 20px;
+  line-height: 1.6;
+}
+
+/* ─── STAT CARDS ────────────────────────────────────────────────── */
+.stat-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 20px 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: background 0.2s;
+}
+
+.stat-card:hover { background: rgba(255, 255, 255, 0.16); }
+
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.stat-unit {
+  font-size: 20px;
+  color: #e9c46a;
+  margin-left: 2px;
+}
+
+.stat-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #94d2bd;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.stat-note {
+  font-size: 11px;
+  color: #80b5bd;
+  margin-top: 2px;
+}
+
+/* ─── SECTION HEADINGS ──────────────────────────────────────────── */
+.section-title {
+  font-size: clamp(24px, 3vw, 34px);
+  color: #003d4d;
+  margin-bottom: 12px;
+}
+
+.section-intro {
+  font-size: 15.5px;
+  color: #3a3a3c;
+  max-width: 62ch;
+  line-height: 1.65;
+}
+
+.section-intro strong {
+  color: #003d4d;
+  font-weight: 600;
+}
+
+/* ─── CHART LABELS ──────────────────────────────────────────────── */
+.chart-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  color: #1c1c1e;
+  font-weight: 700;
+}
+
+.chart-note {
+  font-size: 13px;
+  color: #6e6e73;
+  line-height: 1.5;
+}
+
+.chart-source {
+  font-size: 11px;
+  color: #8e8e93;
+  font-style: italic;
+}
+
+/* ─── LEGEND DOT ────────────────────────────────────────────────── */
+.legend-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+/* ─── FOOTER ────────────────────────────────────────────────────── */
+.footer-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #f2f2f7;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  color: lightblue;
+}
+
+.footer-list li {
+  font-size: 12px;
+  color: #aeaeb2;
+  line-height: 1.8;
+  padding-left: 14px;
+  position: relative;
+}
+
+.footer-list li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: #636366;
+}
+
+.footer-list a {
+  color: #66CCEE;
+  text-decoration: none;
+}
+
+.footer-list a:hover {
+  text-decoration: underline;
+}
+
+.footer-text {
+  font-size: 12px;
+  color: #aeaeb2;
+  line-height: 1.7;
+}
+
+.footer-date {
+  margin-top: 8px;
+  color: #636366;
+}
+
+/* ─── VEGA-LITE OVERRIDE — hide default border ──────────────────── */
+.vega-embed {
+  width: 100% !important;
+}
+
+.vega-embed summary { display: none !important; }
