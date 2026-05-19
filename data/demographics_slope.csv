@@ -1,0 +1,25 @@
+group,category,year,percentage,direction
+Age Group,15 – 24,2023,21.9,Decreased
+Age Group,15 – 24,2024,19.2,Decreased
+Age Group,25 – 39,2023,38.7,Decreased
+Age Group,25 – 39,2024,35.1,Decreased
+Age Group,40 – 54,2023,23.5,Increased
+Age Group,40 – 54,2024,27.4,Increased
+Age Group,≥ 55,2023,15.9,Increased
+Age Group,≥ 55,2024,18.3,Increased
+Education Level,Tertiary,2023,35.9,Decreased
+Education Level,Tertiary,2024,35.8,Decreased
+Education Level,Secondary,2023,48.0,Increased
+Education Level,Secondary,2024,48.8,Increased
+Education Level,Primary,2023,12.6,Decreased
+Education Level,Primary,2024,12.3,Decreased
+Education Level,No Formal Education,2023,3.5,Decreased
+Education Level,No Formal Education,2024,3.1,Decreased
+Ethnic Group,Bumiputera,2023,60.9,Increased
+Ethnic Group,Bumiputera,2024,63.0,Increased
+Ethnic Group,Chinese,2023,23.1,Decreased
+Ethnic Group,Chinese,2024,22.4,Decreased
+Ethnic Group,Indian,2023,6.8,Unchanged
+Ethnic Group,Indian,2024,6.8,Unchanged
+Ethnic Group,Others,2023,9.2,Decreased
+Ethnic Group,Others,2024,7.8,Decreased

@@ -1,0 +1,290 @@
+origin,destination,visitors
+Malaysia,Malaysia,93445.3
+Johor,Malaysia,11279.8
+Kedah,Malaysia,4850.2
+Kelantan,Malaysia,3115.7
+Melaka,Malaysia,2989.8
+Negeri Sembilan,Malaysia,3608.3
+Pahang,Malaysia,5745.0
+Pulau Pinang,Malaysia,4612.8
+Perak,Malaysia,6827.5
+Perlis,Malaysia,933.2
+Selangor,Malaysia,21506.2
+Terengganu,Malaysia,1574.3
+Sabah,Malaysia,5323.4
+Sarawak,Malaysia,5067.5
+W.P. Kuala Lumpur,Malaysia,15233.5
+W.P. Labuan,Malaysia,238.3
+W.P. Putrajaya,Malaysia,539.9
+Malaysia,Johor,9481.1
+Johor,Johor,3704.7
+Kedah,Johor,133.1
+Kelantan,Johor,115.9
+Melaka,Johor,459.1
+Negeri Sembilan,Johor,464.8
+Pahang,Johor,538.8
+Pulau Pinang,Johor,124.8
+Perak,Johor,282.4
+Perlis,Johor,20.5
+Selangor,Johor,1837.8
+Terengganu,Johor,12.1
+Sabah,Johor,27.4
+Sarawak,Johor,41.5
+W.P. Kuala Lumpur,Johor,1689.7
+W.P. Labuan,Johor,0.1
+W.P. Putrajaya,Johor,28.4
+Malaysia,Kedah,6854.4
+Johor,Kedah,196.7
+Kedah,Kedah,1787.5
+Kelantan,Kedah,132.2
+Melaka,Kedah,122.6
+Negeri Sembilan,Kedah,71.6
+Pahang,Kedah,122.4
+Pulau Pinang,Kedah,962.0
+Perak,Kedah,659.7
+Perlis,Kedah,238.6
+Selangor,Kedah,1793.6
+Terengganu,Kedah,7.9
+Sabah,Kedah,34.3
+Sarawak,Kedah,72.6
+W.P. Kuala Lumpur,Kedah,624.9
+W.P. Labuan,Kedah,1.8
+W.P. Putrajaya,Kedah,26.1
+Malaysia,Kelantan,5863.8
+Johor,Kelantan,425.3
+Kedah,Kelantan,276.2
+Kelantan,Kelantan,978.0
+Melaka,Kelantan,79.5
+Negeri Sembilan,Kelantan,258.2
+Pahang,Kelantan,474.4
+Pulau Pinang,Kelantan,4.8
+Perak,Kelantan,245.4
+Perlis,Kelantan,34.6
+Selangor,Kelantan,1366.0
+Terengganu,Kelantan,346.7
+Sabah,Kelantan,7.9
+Sarawak,Kelantan,23.4
+W.P. Kuala Lumpur,Kelantan,1289.4
+W.P. Labuan,Kelantan,1.9
+W.P. Putrajaya,Kelantan,52.1
+Malaysia,Melaka,6158.4
+Johor,Melaka,1528.0
+Kedah,Melaka,96.2
+Kelantan,Melaka,8.6
+Melaka,Melaka,266.1
+Negeri Sembilan,Melaka,359.6
+Pahang,Melaka,134.3
+Pulau Pinang,Melaka,210.4
+Perak,Melaka,202.4
+Perlis,Melaka,6.8
+Selangor,Melaka,1698.8
+Terengganu,Melaka,10.5
+Sabah,Melaka,28.1
+Sarawak,Melaka,7.0
+W.P. Kuala Lumpur,Melaka,1520.4
+W.P. Labuan,Melaka,0.2
+W.P. Putrajaya,Melaka,80.8
+Malaysia,Negeri Sembilan,5987.5
+Johor,Negeri Sembilan,617.0
+Kedah,Negeri Sembilan,233.3
+Kelantan,Negeri Sembilan,106.1
+Melaka,Negeri Sembilan,379.1
+Negeri Sembilan,Negeri Sembilan,714.6
+Pahang,Negeri Sembilan,221.1
+Pulau Pinang,Negeri Sembilan,67.8
+Perak,Negeri Sembilan,186.8
+Perlis,Negeri Sembilan,13.4
+Selangor,Negeri Sembilan,1524.3
+Terengganu,Negeri Sembilan,19.3
+Sabah,Negeri Sembilan,6.9
+Sarawak,Negeri Sembilan,8.1
+W.P. Kuala Lumpur,Negeri Sembilan,1815.3
+W.P. Labuan,Negeri Sembilan,1.3
+W.P. Putrajaya,Negeri Sembilan,73.1
+Malaysia,Pahang,9525.8
+Johor,Pahang,920.0
+Kedah,Pahang,248.8
+Kelantan,Pahang,251.9
+Melaka,Pahang,254.6
+Negeri Sembilan,Pahang,459.9
+Pahang,Pahang,1981.2
+Pulau Pinang,Pahang,396.0
+Perak,Pahang,432.2
+Perlis,Pahang,75.1
+Selangor,Pahang,1637.0
+Terengganu,Pahang,293.9
+Sabah,Pahang,11.5
+Sarawak,Pahang,12.6
+W.P. Kuala Lumpur,Pahang,2485.9
+W.P. Labuan,Pahang,21.0
+W.P. Putrajaya,Pahang,44.2
+Malaysia,Pulau Pinang,4766.0
+Johor,Pulau Pinang,221.3
+Kedah,Pulau Pinang,450.1
+Kelantan,Pulau Pinang,146.9
+Melaka,Pulau Pinang,106.2
+Negeri Sembilan,Pulau Pinang,140.5
+Pahang,Pulau Pinang,119.9
+Pulau Pinang,Pulau Pinang,523.1
+Perak,Pulau Pinang,384.4
+Perlis,Pulau Pinang,197.3
+Selangor,Pulau Pinang,1199.2
+Terengganu,Pulau Pinang,34.8
+Sabah,Pulau Pinang,86.5
+Sarawak,Pulau Pinang,41.9
+W.P. Kuala Lumpur,Pulau Pinang,1088.2
+W.P. Labuan,Pulau Pinang,0.5
+W.P. Putrajaya,Pulau Pinang,25.3
+Malaysia,Perak,10209.0
+Johor,Perak,403.3
+Kedah,Perak,723.3
+Kelantan,Perak,222.0
+Melaka,Perak,259.2
+Negeri Sembilan,Perak,315.0
+Pahang,Perak,489.0
+Pulau Pinang,Perak,487.1
+Perak,Perak,1887.0
+Perlis,Perak,97.4
+Selangor,Perak,3336.2
+Terengganu,Perak,19.1
+Sabah,Perak,6.0
+Sarawak,Perak,5.6
+W.P. Kuala Lumpur,Perak,1881.6
+W.P. Labuan,Perak,1.2
+W.P. Putrajaya,Perak,76.0
+Malaysia,Perlis,1262.0
+Johor,Perlis,95.6
+Kedah,Perlis,130.8
+Kelantan,Perlis,34.5
+Melaka,Perlis,3.2
+Negeri Sembilan,Perlis,18.3
+Pahang,Perlis,25.8
+Pulau Pinang,Perlis,216.4
+Perak,Perlis,102.5
+Perlis,Perlis,51.0
+Selangor,Perlis,461.2
+Terengganu,Perlis,5.5
+Sabah,Perlis,4.4
+Sarawak,Perlis,13.2
+W.P. Kuala Lumpur,Perlis,97.9
+W.P. Labuan,Perlis,0.6
+W.P. Putrajaya,Perlis,1.4
+Malaysia,Selangor,9574.4
+Johor,Selangor,1746.8
+Kedah,Selangor,297.1
+Kelantan,Selangor,259.0
+Melaka,Selangor,378.1
+Negeri Sembilan,Selangor,351.4
+Pahang,Selangor,383.8
+Pulau Pinang,Selangor,354.5
+Perak,Selangor,1053.9
+Perlis,Selangor,73.1
+Selangor,Selangor,2953.3
+Terengganu,Selangor,224.9
+Sabah,Selangor,200.9
+Sarawak,Selangor,211.8
+W.P. Kuala Lumpur,Selangor,1026.4
+W.P. Labuan,Selangor,3.5
+W.P. Putrajaya,Selangor,55.9
+Malaysia,Terengganu,4918.4
+Johor,Terengganu,188.5
+Kedah,Terengganu,61.2
+Kelantan,Terengganu,496.8
+Melaka,Terengganu,74.9
+Negeri Sembilan,Terengganu,136.4
+Pahang,Terengganu,686.1
+Pulau Pinang,Terengganu,489.9
+Perak,Terengganu,256.3
+Perlis,Terengganu,49.4
+Selangor,Terengganu,973.6
+Terengganu,Terengganu,487.7
+Sabah,Terengganu,10.2
+Sarawak,Terengganu,22.4
+W.P. Kuala Lumpur,Terengganu,954.5
+W.P. Labuan,Terengganu,1.8
+W.P. Putrajaya,Terengganu,28.7
+Malaysia,Sabah,6081.5
+Johor,Sabah,168.9
+Kedah,Sabah,32.9
+Kelantan,Sabah,28.8
+Melaka,Sabah,78.2
+Negeri Sembilan,Sabah,8.8
+Pahang,Sabah,61.9
+Pulau Pinang,Sabah,181.9
+Perak,Sabah,77.6
+Perlis,Sabah,4.2
+Selangor,Sabah,770.9
+Terengganu,Sabah,26.8
+Sabah,Sabah,4132.3
+Sarawak,Sabah,247.5
+W.P. Kuala Lumpur,Sabah,106.0
+W.P. Labuan,Sabah,151.3
+W.P. Putrajaya,Sabah,3.4
+Malaysia,Sarawak,5701.0
+Johor,Sarawak,209.9
+Kedah,Sarawak,30.2
+Kelantan,Sarawak,3.6
+Melaka,Sarawak,27.8
+Negeri Sembilan,Sarawak,9.9
+Pahang,Sarawak,8.7
+Pulau Pinang,Sarawak,1.1
+Perak,Sarawak,37.4
+Perlis,Sarawak,3.1
+Selangor,Sarawak,588.1
+Terengganu,Sarawak,2.7
+Sabah,Sarawak,386.6
+Sarawak,Sarawak,4055.8
+W.P. Kuala Lumpur,Sarawak,304.5
+W.P. Labuan,Sarawak,16.2
+W.P. Putrajaya,Sarawak,15.3
+Malaysia,W.P. Kuala Lumpur,6216.3
+Johor,W.P. Kuala Lumpur,787.6
+Kedah,W.P. Kuala Lumpur,254.9
+Kelantan,W.P. Kuala Lumpur,232.4
+Melaka,W.P. Kuala Lumpur,458.3
+Negeri Sembilan,W.P. Kuala Lumpur,256.1
+Pahang,W.P. Kuala Lumpur,467.8
+Pulau Pinang,W.P. Kuala Lumpur,539.0
+Perak,W.P. Kuala Lumpur,909.0
+Perlis,W.P. Kuala Lumpur,56.9
+Selangor,W.P. Kuala Lumpur,1291.2
+Terengganu,W.P. Kuala Lumpur,74.3
+Sabah,W.P. Kuala Lumpur,277.9
+Sarawak,W.P. Kuala Lumpur,246.0
+W.P. Kuala Lumpur,W.P. Kuala Lumpur,338.1
+W.P. Labuan,W.P. Kuala Lumpur,13.7
+W.P. Putrajaya,W.P. Kuala Lumpur,13.2
+Malaysia,W.P. Labuan,194.1
+Johor,W.P. Labuan,13.4
+Kedah,W.P. Labuan,7.1
+Kelantan,W.P. Labuan,3.3
+Melaka,W.P. Labuan,1.6
+Negeri Sembilan,W.P. Labuan,6.8
+Pahang,W.P. Labuan,5.9
+Pulau Pinang,W.P. Labuan,8.0
+Perak,W.P. Labuan,20.3
+Perlis,W.P. Labuan,0.8
+Selangor,W.P. Labuan,9.7
+Terengganu,W.P. Labuan,5.0
+Sabah,W.P. Labuan,64.2
+Sarawak,W.P. Labuan,27.3
+W.P. Kuala Lumpur,W.P. Labuan,4.0
+W.P. Labuan,W.P. Labuan,15.2
+W.P. Putrajaya,W.P. Labuan,1.6
+Malaysia,W.P. Putrajaya,651.6
+Johor,W.P. Putrajaya,52.9
+Kedah,W.P. Putrajaya,87.5
+Kelantan,W.P. Putrajaya,95.8
+Melaka,W.P. Putrajaya,41.3
+Negeri Sembilan,W.P. Putrajaya,36.3
+Pahang,W.P. Putrajaya,23.8
+Pulau Pinang,W.P. Putrajaya,46.0
+Perak,W.P. Putrajaya,90.3
+Perlis,W.P. Putrajaya,11.0
+Selangor,W.P. Putrajaya,65.4
+Terengganu,W.P. Putrajaya,3.0
+Sabah,W.P. Putrajaya,38.4
+Sarawak,W.P. Putrajaya,30.9
+W.P. Kuala Lumpur,W.P. Putrajaya,6.8
+W.P. Labuan,W.P. Putrajaya,7.9
+W.P. Putrajaya,W.P. Putrajaya,14.4
