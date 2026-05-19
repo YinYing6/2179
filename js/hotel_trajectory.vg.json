@@ -12,7 +12,7 @@
         "x": {
           "field": "occupancy_rate",
           "type": "quantitative",
-          "scale": { "domain": [24, 65] },
+          "scale": { "domain": [0, 70] },
           "axis": {
             "title": "Avg Occupancy Rate (%)",
             "grid": true,
@@ -23,7 +23,7 @@
         "y": {
           "field": "avg_stay_nights",
           "type": "quantitative",
-          "scale": { "domain": [2.5, 8.5] },
+          "scale": { "domain": [0, 9] },
           "axis": {
             "title": "Avg Length of Stay (nights)",
             "grid": true,
@@ -71,8 +71,8 @@
     },
     {
       "data": { "values": [
-        { "x": 41, "y": 6.1, "label": "COVID collapse ↙" },
-        { "x": 51, "y": 3.3, "label": "Recovery ↗" }
+        { "x": 35, "y": 6.5, "label": "COVID collapse ↙" },
+        { "x": 53, "y": 3.0, "label": "Recovery ↗" }
       ]},
       "mark": { "type": "text", "fontSize": 10, "fontStyle": "italic", "color": "#888888" },
       "encoding": {
