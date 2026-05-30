@@ -8,7 +8,7 @@
   "data": { "url": "https://raw.githubusercontent.com/YinYing6/2179/refs/heads/main/data/inbound_ranks.csv" },
   "layer": [
     {
-      "mark": { "type": "trail", "strokeCap": "butt" },
+      "mark": { "type": "line", "strokeWidth": 2.5, "point": {"filled": true, "size": 60} },
       "encoding": {
         "x": {
           "field": "year",
@@ -27,12 +27,6 @@
             "gridColor": "#e8e8e8",
             "labelExpr": "datum.value + (datum.value === 1 ? 'st' : datum.value === 2 ? 'nd' : datum.value === 3 ? 'rd' : 'th')"
           }
-        },
-        "size": {
-          "field": "visitors",
-          "type": "quantitative",
-          "scale": { "type": "sqrt", "domain": [0, 20000000], "range": [1, 30] },
-          "legend": null
         },
         "color": {
           "field": "country",

@@ -64,6 +64,25 @@
       "encoding": {
         "x": { "field": "x", "type": "ordinal" }
       }
+    },
+    {
+      "data": { "values": [{ "x": "2021-Q3", "label": "← Interstate restrictions lifted Oct 2021" }] },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 8,
+        "dy": -8,
+        "fontSize": 9.5,
+        "fontStyle": "italic",
+        "fontWeight": 600,
+        "color": "#c47c35",
+        "clip": false
+      },
+      "encoding": {
+        "x": { "field": "x", "type": "ordinal" },
+        "y": { "value": 20 },
+        "text": { "field": "label", "type": "nominal" }
+      }
     }
   ]
 }

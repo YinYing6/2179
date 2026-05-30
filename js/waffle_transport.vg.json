@@ -1,49 +1,66 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Waffle chart — mode of transport for domestic tourists 2024",
-  "width": 260,
-  "height": 260,
+  "width": 310,
+  "height": 310,
   "config": { "view": { "stroke": null } },
   "data": { "url": "https://raw.githubusercontent.com/YinYing6/2179/refs/heads/main/data/waffle_transport.csv" },
-  "mark": {
-    "type": "rect",
-    "width": 22,
-    "height": 22,
-    "cornerRadius": 3
-  },
-  "encoding": {
-    "x": {
-      "field": "col",
-      "type": "ordinal",
-      "axis": null
-    },
-    "y": {
-      "field": "row",
-      "type": "ordinal",
-      "axis": null
-    },
-    "color": {
-      "field": "mode",
-      "type": "nominal",
-      "scale": {
-        "domain": [
-          "Private Vehicle (90.9%)",
-          "Taxi / e-Hailing (4.1%)",
-          "Bus (3.9%)",
-          "Train / Air / Water (1.1%)"
-        ],
-        "range": ["#003399", "#FF8C00", "#FFCC00", "#AA4499"]
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "width": 26,
+        "height": 26,
+        "cornerRadius": 3
       },
-      "legend": {
-        "title": null,
-        "orient": "bottom",
-        "columns": 2,
-        "symbolSize": 80,
-        "labelFontSize": 11
+      "encoding": {
+        "x": { "field": "col", "type": "ordinal", "axis": null },
+        "y": { "field": "row", "type": "ordinal", "axis": null },
+        "color": {
+          "field": "mode",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Private Vehicle (90.9%)",
+              "Taxi / e-Hailing (4.1%)",
+              "Bus (3.9%)",
+              "Train / Air / Water (1.1%)"
+            ],
+            "range": ["#003399", "#FF8C00", "#FFCC00", "#AA4499"]
+          },
+          "legend": {
+            "title": null,
+            "orient": "bottom",
+            "columns": 2,
+            "symbolSize": 100,
+            "labelFontSize": 12
+          }
+        },
+        "tooltip": [{ "field": "mode", "title": "Mode" }]
       }
     },
-    "tooltip": [
-      { "field": "mode", "title": "Mode" }
-    ]
-  }
+    {
+      "data": { "values": [
+        { "cx": 4.4, "cy": 4.5, "line1": "Private Vehicle", "line2": "90.9%" }
+      ]},
+      "layer": [
+        {
+          "mark": { "type": "text", "fontSize": 19, "fontWeight": "bold", "fill": "white", "stroke": "#001a55", "strokeWidth": 1, "dy": -9 },
+          "encoding": {
+            "x": { "field": "cx", "type": "quantitative", "scale": { "domain": [-0.5, 9.5] }, "axis": null },
+            "y": { "field": "cy", "type": "quantitative", "scale": { "domain": [-0.5, 9.5] }, "axis": null },
+            "text": { "field": "line1", "type": "nominal" }
+          }
+        },
+        {
+          "mark": { "type": "text", "fontSize": 20, "fontWeight": "bold", "fill": "white", "stroke": "#001a55", "strokeWidth": 1, "dy": 9 },
+          "encoding": {
+            "x": { "field": "cx", "type": "quantitative", "scale": { "domain": [-0.5, 9.5] }, "axis": null },
+            "y": { "field": "cy", "type": "quantitative", "scale": { "domain": [-0.5, 9.5] }, "axis": null },
+            "text": { "field": "line2", "type": "nominal" }
+          }
+        }
+      ]
+    }
+  ]
 }

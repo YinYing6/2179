@@ -9,14 +9,15 @@
     "columns": 3,
     "header": {
       "title": null,
-      "labelFontSize": 12,
+      "labelFontSize": 13,
       "labelFontWeight": "bold",
       "labelColor": "#1c1c1e"
     }
   },
   "spec": {
-    "width": 180,
-    "height": 260,
+    "width": 200,
+    "height": 300,
+    "padding": { "left": 70, "right": 30, "top": 5, "bottom": 5 },
     "layer": [
       {
         "mark": { "type": "line", "strokeWidth": 2 },
@@ -34,6 +35,7 @@
           "y": {
             "field": "percentage",
             "type": "quantitative",
+            "scale": { "domainMin": 0 },
             "axis": { "title": "Share (%)", "grid": true, "gridColor": "#e8e8e8" }
           },
           "color": {
@@ -76,7 +78,7 @@
       },
       {
         "transform": [ { "filter": "datum.year === '2023'" } ],
-        "mark": { "type": "text", "align": "right", "dx": -8, "fontSize": 8.5 },
+        "mark": { "type": "text", "align": "right", "dx": -10, "fontSize": 9.5 },
         "encoding": {
           "x": { "field": "year", "type": "ordinal" },
           "y": { "field": "percentage", "type": "quantitative" },
@@ -94,7 +96,7 @@
       },
       {
         "transform": [ { "filter": "datum.year === '2024'" } ],
-        "mark": { "type": "text", "align": "left", "dx": 8, "fontSize": 8.5 },
+        "mark": { "type": "text", "align": "left", "dx": 10, "fontSize": 9.5 },
         "encoding": {
           "x": { "field": "year", "type": "ordinal" },
           "y": { "field": "percentage", "type": "quantitative" },

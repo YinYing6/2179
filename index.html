@@ -21,10 +21,25 @@
 </head>
 <body>
 
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- STICKY NAV -->
+  <nav class="site-nav" id="site-nav">
+    <div class="container">
+      <a href="#recovery">Collapse &amp; Comeback</a>
+      <a href="#domestic">Where They Travel</a>
+      <a href="#inbound">Global Draw</a>
+      <a href="#demographics">Who's Travelling</a>
+      <a href="#behaviour">How They Travel</a>
+      <a href="#economy">Economic Engine</a>
+    </div>
+  </nav>
+
   <!-- HERO -->
   <header class="hero">
     <div class="container">
-      <h1 class="hero-title">Malaysian Tourism: <br>A Nation's Comeback</h1>
+      <h1 class="hero-title">Malaysian Tourism:<br>A Nation's Comeback</h1>
       <p class="hero-subtitle">
         In 2020, arrivals collapsed. By 2024, Malaysia broke records in every metric.
         Explore the data behind Southeast Asia's most remarkable tourism recovery.
@@ -58,27 +73,34 @@
   <!-- SECTION 1 — COLLAPSE AND RECOVERY -->
   <section class="section" id="recovery">
     <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">The Collapse and the Comeback</h2>
-        <p class="section-intro">
-          Malaysia's tourism industry suffered one of the steepest drops on record
-          in 2020, then staged one of the fastest recoveries in Southeast Asia.
-          The two charts below trace that arc, from the depths of the pandemic to
-          the record-breaking rebound of 2024.
-        </p>
+      <div class="section-header reveal">
+        <div class="section-header__body">
+          <p class="section-eyebrow">01 — The Shock</p>
+          <h2 class="section-title">The Collapse and the Comeback</h2>
+          <p class="section-intro">
+            Malaysia's tourism industry suffered one of the steepest drops on record
+            in 2020, then staged one of the fastest recoveries in Southeast Asia.
+            The two charts below trace that arc, from the depths of the pandemic to
+            the record-breaking rebound of 2024.
+          </p>
+        </div>
+        <div class="section-header__callout">
+          <span class="pull-stat-num">−98.8%</span>
+          <p class="pull-stat-label">inbound visitor drop in a single year — from 35 million to just 400,000 arrivals in 2020</p>
+        </div>
       </div>
 
       <div class="grid-2">
-        <div class="chart-block">
+        <div class="chart-block reveal reveal-delay-1">
           <h3 class="chart-title">Visitor Arrivals 2017–2024</h3>
-          <p class="chart-note">Two lines, two y-axes. Inbound (orange) plunged 99% in 2021 to just 400,000; domestic (blue) halved. Both broke all-time records by 2024.</p>
+          <p class="chart-note">Inbound (orange) plunged 99% at the pandemic low to under 400,000; domestic (blue) halved. Both broke all-time records by 2024.</p>
           <div id="vis-recovery" class="vis-container"></div>
-          <p class="chart-source">Source: Department of Statistics Malaysia (DOSM); Lembaga Penggalakan Pelancongan Malaysia (Tourism Malaysia) </p>
+          <p class="chart-source">Source: DOSM; Tourism Malaysia</p>
         </div>
 
-        <div class="chart-block">
+        <div class="chart-block reveal reveal-delay-2">
           <h3 class="chart-title">Quarterly Domestic Visitors 2021–2025</h3>
-          <p class="chart-note">Area height = domestic visitors that quarter. The snap-back after October 2021 border reopening is immediate. Q4 2025 reached 74 million, seven times the pandemic trough.</p>
+          <p class="chart-note">The snap-back after interstate travel restrictions were lifted in October 2021 is immediate. Q4 2025 reached 74 million, seven times the pandemic trough.</p>
           <div id="vis-quarterly" class="vis-container"></div>
           <p class="chart-source">Source: DOSM Domestic Tourism Survey</p>
         </div>
@@ -89,28 +111,35 @@
   <!-- SECTION 2 — WHERE MALAYSIA TRAVELS -->
   <section class="section section-alt" id="domestic">
     <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Where Malaysia Travels</h2>
-        <p class="section-intro">
-          Domestic tourism in Malaysia is not evenly spread as
-          a handful of states account for the majority of both origins
-          and destinations. Geography, population, and economic activity
-          all concentrate flows in predictable corridors.
-        </p>
+      <div class="section-header reveal">
+        <div class="section-header__body">
+          <p class="section-eyebrow">02 — Geography of Demand</p>
+          <h2 class="section-title">Where Malaysia Travels</h2>
+          <p class="section-intro">
+            Domestic tourism in Malaysia is not evenly spread —
+            a handful of states account for the majority of both origins
+            and destinations. Geography, population, and economic activity
+            all concentrate flows in predictable corridors.
+          </p>
+        </div>
+        <div class="section-header__callout">
+          <span class="pull-stat-num">#1</span>
+          <p class="pull-stat-label">Selangor — consistently the top origin and destination state for domestic trips every year</p>
+        </div>
       </div>
 
-      <div class="chart-block chart-block--full">
+      <div class="chart-block chart-block--full reveal">
         <h3 class="chart-title">Domestic Visitors Received by State</h3>
-        <p class="chart-note">Darker shade = more visitors received. Drag the year slider to trace COVID's contraction across states in 2020–2021, and the uneven recovery from 2022. Selangor and KL consistently lead.</p>
+        <p class="chart-note">Drag the year slider to trace COVID's contraction across states in 2020–2021, and the uneven recovery from 2022. Selangor and KL consistently dominate; no other state comes close.</p>
         <div id="vis-choropleth" class="vis-container"></div>
         <p class="chart-source">Source: Department of Statistics Malaysia (DOSM)</p>
       </div>
 
       <div class="section-divider"></div>
 
-      <div class="chart-block chart-block--full">
+      <div class="chart-block chart-block--full reveal">
         <h3 class="chart-title">State-to-State Tourist Flows (2024)</h3>
-        <p class="chart-note">Row = origin state; column = destination. Brightest cells = within-state day trips. The Selangor row and column stand out as the busiest cross-state corridor, reflecting its role as Malaysia's economic and population centre.</p>
+        <p class="chart-note">Most trips stay within the same state; Malaysians are local travellers first. Selangor is the exception: its row and column are the brightest outside the diagonal, making it the hub of every cross-state corridor in the country.</p>
         <div id="vis-heatmap" class="vis-container"></div>
         <p class="chart-source">Source: Department of Statistics Malaysia (DOSM)</p>
       </div>
@@ -120,29 +149,36 @@
   <!-- SECTION 3 — INTERNATIONAL VISITORS -->
   <section class="section" id="inbound">
     <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Malaysia's Global Draw</h2>
-        <p class="section-intro">
-          Malaysia's inbound tourism is dominated by proximity, neighbouring
-          countries consistently top the rankings. COVID disrupted that geography
-          when land borders closed, exposing how dependent arrival numbers are on
-          physical access rather than destination appeal alone.
-        </p>
+      <div class="section-header reveal">
+        <div class="section-header__body">
+          <p class="section-eyebrow">03 — International Arrivals</p>
+          <h2 class="section-title">Malaysia's Global Draw</h2>
+          <p class="section-intro">
+            Malaysia's inbound tourism is dominated by proximity — neighbouring
+            countries consistently top the rankings. COVID disrupted that geography
+            when land borders closed, exposing how dependent arrival numbers are on
+            physical access rather than destination appeal alone.
+          </p>
+        </div>
+        <div class="section-header__callout">
+          <span class="pull-stat-num">47%</span>
+          <p class="pull-stat-label">of all inbound arrivals come from Singapore — the highest single-country share in Southeast Asia</p>
+        </div>
       </div>
 
       <div class="grid-2">
-        <div class="chart-block">
+        <div class="chart-block reveal reveal-delay-1">
           <h3 class="chart-title">Source Country Rankings — How COVID Reshuffled the Table</h3>
-          <p class="chart-note">Vertical position = rank; band width = visitor volume. Hover any band for exact figures. Singapore holds the top rank every year except 2021, when the Johor Causeway shut and Thailand briefly led. China's band nearly vanishes in 2021 then climbs back to 3rd by 2024.</p>
+          <p class="chart-note">Singapore holds the top rank every year except 2021, when the Johor Causeway shut and Thailand briefly took over. China nearly disappears in 2021, then climbs back to 3rd by 2024. Both cases show that border policy, not just destination preference, shapes the rankings.</p>
           <div id="vis-bump" class="vis-container"></div>
-          <p class="chart-source">Source: Lembaga Penggalakan Pelancongan Malaysia (Tourism Malaysia)</p>
+          <p class="chart-source">Source: Tourism Malaysia</p>
         </div>
 
-        <div class="chart-block">
+        <div class="chart-block reveal reveal-delay-2">
           <h3 class="chart-title">Hotel Performance Trajectory 2019–2024</h3>
-          <p class="chart-note">Each point = one year; follow the path chronologically. Occupancy (55%) is nearly back to 2019, but average stay (5.1 nights) is still far behind the pre-COVID 7.4.</p>
+          <p class="chart-note">Occupancy (55%) is almost back to 2019 levels, but average stay (5.1 nights) remains far behind the pre-COVID 7.4. Visitors are returning yet spending fewer nights, which limits per-visitor revenue despite record headcounts.</p>
           <div id="vis-hotel" class="vis-container"></div>
-          <p class="chart-source">Source: Lembaga Penggalakan Pelancongan Malaysia (Tourism Malaysia)</p>
+          <p class="chart-source">Source: Tourism Malaysia</p>
         </div>
       </div>
     </div>
@@ -151,19 +187,26 @@
   <!-- SECTION 4 — WHO'S TRAVELLING -->
   <section class="section section-alt" id="demographics">
     <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Who's Behind the Boom</h2>
-        <p class="section-intro">
-          Volume records mask a quieter structural shift: the profile of
-          Malaysia's domestic tourist is changing. The traveller base is ageing,
-          and the ethnic composition of trips reveals which communities are
-          driving the boom.
-        </p>
+      <div class="section-header reveal">
+        <div class="section-header__body">
+          <p class="section-eyebrow">04 — Traveller Profile</p>
+          <h2 class="section-title">Who's Behind the Boom</h2>
+          <p class="section-intro">
+            Volume records mask a quieter structural shift: the profile of
+            Malaysia's domestic tourist is changing. The traveller base is ageing,
+            and the ethnic composition of trips reveals which communities are
+            driving the boom.
+          </p>
+        </div>
+        <div class="section-header__callout">
+          <span class="pull-stat-num">+3.9pp</span>
+          <p class="pull-stat-label">the 40–54 age bracket's share rose more than any other group between 2023 and 2024</p>
+        </div>
       </div>
 
-      <div class="chart-block chart-block--full">
+      <div class="chart-block chart-block--full reveal">
         <h3 class="chart-title">Demographic Shifts in Domestic Tourists — 2023 to 2024</h3>
-        <p class="chart-note">Each line = one demographic group's share of domestic trips, 2023 vs 2024. The 40–54 bracket gained 3.9%, the sharpest rise. The 15–24 and 25–39 cohorts both shrank. Bumiputera visitors make up 63% of all trips. </p>
+        <p class="chart-note">The 40–54 bracket gained 3.9pp, the sharpest rise of any age group, while the 15–24 and 25–39 cohorts both shrank. Malaysia's tourism boom is being led by middle-aged travellers, not youth. Bumiputera visitors account for 63% of all domestic trips.</p>
         <div id="vis-slope" class="vis-container"></div>
         <p class="chart-source">Source: Department of Statistics Malaysia (DOSM)</p>
       </div>
@@ -173,27 +216,34 @@
   <!-- SECTION 5 — HOW THEY TRAVEL -->
   <section class="section" id="behaviour">
     <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">How They Travel, Who Goes Together</h2>
-        <p class="section-intro">
-          How Malaysians travel and who they travel with reveals both
-          the country's infrastructure reality and a social shift that emerged
-          from the pandemic years. The mode of transport is driven by roads;
-          the companionship is driven by something deeper.
-        </p>
+      <div class="section-header reveal">
+        <div class="section-header__body">
+          <p class="section-eyebrow">05 — Travel Behaviour</p>
+          <h2 class="section-title">How They Travel, Who Goes Together</h2>
+          <p class="section-intro">
+            How Malaysians travel and who they travel with reveals both
+            the country's infrastructure reality and a social shift that emerged
+            from the pandemic years. The mode of transport is driven by roads;
+            the companionship is driven by something deeper.
+          </p>
+        </div>
+        <div class="section-header__callout">
+          <span class="pull-stat-num">91 / 100</span>
+          <p class="pull-stat-label">domestic trips made by private vehicle — Malaysia's car culture captured in a single waffle chart</p>
+        </div>
       </div>
 
       <div class="grid-2">
-        <div class="chart-block">
+        <div class="chart-block reveal reveal-delay-1">
           <h3 class="chart-title">Mode of Transport — 2024 Share</h3>
-          <p class="chart-note">Each square = 1% of all domestic trips. Private vehicles fill 91 of them: Malaysia's road network makes the car the default for 9 in 10 journeys. Air, rail, and water transport share just one square between them, reflecting limited public transport connectivity to most tourism destinations.</p>
-          <div id="vis-waffle" class="vis-container" style="max-width:320px;"></div>
+          <p class="chart-note">Private vehicles claim 91 of every 100 trips. Malaysia's road infrastructure leaves almost no room for alternatives: air, rail, and water combined fill just one square.</p>
+          <div id="vis-waffle" class="vis-container" style="max-width:360px;"></div>
           <p class="chart-source">Source: Department of Statistics Malaysia (DOSM)</p>
         </div>
 
-        <div class="chart-block">
+        <div class="chart-block reveal reveal-delay-2">
           <h3 class="chart-title">Trip Type — 2023 vs 2024</h3>
-          <p class="chart-note">Bars compare 2023 (light blue) vs 2024 (dark blue) by trip type. Family same-day trips surged +28%, adding 51 million trips. Individual overnight trips nearly halved, signalling a clear post-pandemic pivot from solo to group holidays.</p>
+          <p class="chart-note">Family same-day trips surged +28%, adding 51 million trips in a single year. Individual overnight trips nearly halved, a clear post-pandemic pivot away from solo travel toward group and family outings.</p>
           <div id="vis-trip-type" class="vis-container"></div>
           <p class="chart-source">Source: Department of Statistics Malaysia (DOSM)</p>
         </div>
@@ -204,27 +254,34 @@
   <!-- SECTION 6 — ECONOMIC ENGINE -->
   <section class="section section-alt" id="economy">
     <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">The Economic Engine</h2>
-        <p class="section-intro">
-          Tourism is one of Malaysia's most important economic pillars
-          contributing to GDP, generating a sustained trade surplus, and
-          supporting millions of jobs. By 2024, the sector had not just
-          recovered from COVID; it had surpassed every pre-pandemic benchmark.
-        </p>
+      <div class="section-header reveal">
+        <div class="section-header__body">
+          <p class="section-eyebrow">06 — Economic Impact</p>
+          <h2 class="section-title">The Economic Engine</h2>
+          <p class="section-intro">
+            Tourism is one of Malaysia's most important economic pillars —
+            contributing to GDP, generating a sustained trade surplus, and
+            supporting millions of jobs. By 2024, the sector had not just
+            recovered from COVID; it had surpassed every pre-pandemic benchmark.
+          </p>
+        </div>
+        <div class="section-header__callout">
+          <span class="pull-stat-num">2.6×</span>
+          <p class="pull-stat-label">Malaysia earns RM2.60 back for every ringgit Malaysians spend abroad — a tourism trade surplus wider than pre-COVID</p>
+        </div>
       </div>
 
       <div class="grid-2">
-        <div class="chart-block">
+        <div class="chart-block reveal reveal-delay-1">
           <h3 class="chart-title">Inbound vs Outbound Tourism Spending</h3>
-          <p class="chart-note">Lines show annual inbound vs outbound spending. In 2024, Malaysia earned RM107B from visitors while spending RM42B abroad: a 2.6× surplus, wider than the pre-COVID peak.</p>
+          <p class="chart-note">In 2024, Malaysia earned RM107B from visitors while spending RM42B abroad, a 2.6× surplus and the widest margin on record. The gap has never been larger, even compared to pre-COVID years.</p>
           <div id="vis-spending" class="vis-container"></div>
           <p class="chart-source">Source: Jabatan Perangkaan Malaysia; DOSM</p>
         </div>
 
-        <div class="chart-block">
+        <div class="chart-block reveal reveal-delay-2">
           <h3 class="chart-title">Tourism GVA by Sector 2018–2024</h3>
-          <p class="chart-note">Total tourism GVA reached RM292 billion in 2024, up 22% from its 2021 low. Retail trade alone accounts for 53 cents of every ringgit of tourism value, and it is the only sector whose stream never shrank during COVID. Click a sector to highlight it.</p>
+          <p class="chart-note">Retail trade's dominance never wavered; its share of tourism GVA held firm even as accommodation and transport shrank sharply during COVID. Click any sector in the legend to isolate it.</p>
           <div id="vis-streamgraph" class="vis-container"></div>
           <p class="chart-source">Source: Jabatan Perangkaan Malaysia; DOSM</p>
         </div>
@@ -232,9 +289,9 @@
 
       <div class="section-divider"></div>
 
-      <div class="chart-block chart-block--full">
+      <div class="chart-block chart-block--full reveal">
         <h3 class="chart-title">Tourism Employment by Sector 2016–2024</h3>
-        <p class="chart-note">Retail trade and F&amp;B employ 3 in every 4 tourism workers. Jobs peaked at 3.61M in 2022 and have partially recovered to 3.54M by 2024.</p>
+        <p class="chart-note">Retail trade and F&amp;B employ 3 in every 4 tourism workers. Jobs peaked at 3.61M in 2022; by 2024 employment stands at 3.54M, still the second-highest figure on record.</p>
         <div id="vis-employment" class="vis-container"></div>
         <p class="chart-source">Source: Jabatan Perangkaan Malaysia; DOSM</p>
       </div>
@@ -249,7 +306,7 @@
           <ul class="footer-list">
             <li><a href="https://newss.statistics.gov.my/newss-portalx/ep/epFreeDownloadContentSearch.seam?contentId=202580&actionMethod=ep%2FepFreeDownloadContentSearch.xhtml%3AcontentAction.doDisplayContent&cid=297332" target="_blank">Department of Statistics Malaysia (DOSM)</a></li>
             <li><a href="https://newss.statistics.gov.my/newss-portalx/ep/epFreeDownloadContentSearch.seam?contentId=207012&actionMethod=ep%2FepFreeDownloadContentSearch.xhtml%3AcontentAction.doDisplayContent&cid=298213" target="_blank">Jabatan Perangkaan Malaysia; DOSM</a></li>
-            <li><a href="https://newss.statistics.gov.my/newss-portalx/ep/epFreeDownloadContentSearch.seam?contentId=207012&actionMethod=ep%2FepFreeDownloadContentSearch.xhtml%3AcontentAction.doDisplayContent&cid=298213" target="_blank">Lembaga Penggalakan Pelancongan Malaysia (Tourism Malaysia)</a></li>
+            <li><a href="https://newss.statistics.gov.my/newss-portalx/ep/epFreeDownloadContentSearch.seam?contentId=207012&actionMethod=ep%2FepFreeDownloadContentSearch.xhtml%3AcontentAction.doDisplayContent&cid=298213" target="_blank">Tourism Malaysia (Lembaga Penggalakan Pelancongan)</a></li>
           </ul>
         </div>
         <div>
@@ -264,7 +321,6 @@
       </div>
     </div>
   </footer>
-
 
   <script>
     const embedOpts = { actions: false, renderer: "svg" };
@@ -281,6 +337,47 @@
     vegaEmbed("#vis-spending",    "js/inbound_outbound_line.vg.json", embedOpts).catch(console.error);
     vegaEmbed("#vis-streamgraph", "js/streamgraph_gva.vg.json",       embedOpts).catch(console.error);
     vegaEmbed("#vis-employment",  "js/employment_bar.vg.json",        embedOpts).catch(console.error);
+  </script>
+
+  <script>
+    /* ── Scroll progress bar ── */
+    const progressBar = document.getElementById('scroll-progress');
+    const siteNav     = document.getElementById('site-nav');
+    const navLinks    = document.querySelectorAll('.site-nav a');
+    const heroBound   = document.querySelector('.hero').offsetHeight;
+
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+      progressBar.style.width = (scrolled * 100) + '%';
+
+      /* show sticky nav after hero */
+      if (window.scrollY > heroBound * 0.7) siteNav.classList.add('nav-visible');
+      else siteNav.classList.remove('nav-visible');
+    }, { passive: true });
+
+    /* ── Active nav link on scroll ── */
+    const sections = document.querySelectorAll('section[id]');
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(a => a.classList.remove('nav-active'));
+          const active = document.querySelector('.site-nav a[href="#' + entry.target.id + '"]');
+          if (active) active.classList.add('nav-active');
+        }
+      });
+    }, { threshold: 0.25 });
+    sections.forEach(s => sectionObserver.observe(s));
+
+    /* ── Scroll reveal ── */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
   </script>
 
 </body>
