@@ -33,7 +33,7 @@
           "type": "nominal",
           "scale": {
             "domain": ["Inbound", "Outbound"],
-            "range": ["#003399", "#FF8C00"]
+            "range": ["#FF8C00", "#6A4C93"]
           },
           "legend": { "title": null, "orient": "bottom" }
         },
@@ -46,7 +46,7 @@
     },
     {
       "data": { "values": [{ "year": "2024", "y": 107029, "label": "RM 107B inbound" }] },
-      "mark": { "type": "text", "align": "right", "dx": -6, "fontSize": 10, "fontWeight": "bold", "color": "#003399" },
+      "mark": { "type": "text", "align": "right", "dx": -6, "fontSize": 10, "fontWeight": "bold", "color": "#CC6600" },
       "encoding": {
         "x": { "field": "year", "type": "ordinal" },
         "y": { "field": "y", "type": "quantitative" },
@@ -55,7 +55,7 @@
     },
     {
       "data": { "values": [{ "year": "2024", "y": 45000, "label": "RM 42B outbound" }] },
-      "mark": { "type": "text", "align": "right", "dx": -6, "fontSize": 10, "fontWeight": "bold", "color": "#CC6600" },
+      "mark": { "type": "text", "align": "right", "dx": -6, "fontSize": 10, "fontWeight": "bold", "color": "#6A4C93" },
       "encoding": {
         "x": { "field": "year", "type": "ordinal" },
         "y": { "field": "y", "type": "quantitative" },

@@ -26,7 +26,7 @@
               "Bus (3.9%)",
               "Train / Air / Water (1.1%)"
             ],
-            "range": ["#003399", "#FF8C00", "#FFCC00", "#AA4499"]
+            "range": ["#003d4d", "#5E60CE", "#F9C74F", "#E9AFAF"]
           },
           "legend": {
             "title": null,
@@ -45,7 +45,7 @@
       ]},
       "layer": [
         {
-          "mark": { "type": "text", "fontSize": 19, "fontWeight": "bold", "fill": "white", "stroke": "#001a55", "strokeWidth": 1, "dy": -9 },
+          "mark": { "type": "text", "fontSize": 19, "fontWeight": "bold", "fill": "white", "stroke": "#001c22", "strokeWidth": 1, "dy": -9 },
           "encoding": {
             "x": { "field": "cx", "type": "quantitative", "scale": { "domain": [-0.5, 9.5] }, "axis": null },
             "y": { "field": "cy", "type": "quantitative", "scale": { "domain": [-0.5, 9.5] }, "axis": null },
@@ -53,7 +53,7 @@
           }
         },
         {
-          "mark": { "type": "text", "fontSize": 20, "fontWeight": "bold", "fill": "white", "stroke": "#001a55", "strokeWidth": 1, "dy": 9 },
+          "mark": { "type": "text", "fontSize": 20, "fontWeight": "bold", "fill": "white", "stroke": "#001c22", "strokeWidth": 1, "dy": 9 },
           "encoding": {
             "x": { "field": "cx", "type": "quantitative", "scale": { "domain": [-0.5, 9.5] }, "axis": null },
             "y": { "field": "cy", "type": "quantitative", "scale": { "domain": [-0.5, 9.5] }, "axis": null },

@@ -33,7 +33,7 @@
           "type": "nominal",
           "scale": {
             "domain": ["Singapore","Indonesia","China","Thailand","Brunei Darussalam","India","South Korea","Philippines"],
-            "range": ["#003399","#0099CC","#FFCC00","#FF8C00","#AA4499","#CC6600","#66CCEE","#888888"]
+            "range": ["#0047AB","#9B72CF","#F72585","#7209B7","#4361EE","#FFBE0B","#560BAD","#6C584C"]
           },
           "legend": null
         }
@@ -49,7 +49,7 @@
           "type": "nominal",
           "scale": {
             "domain": ["Singapore","Indonesia","China","Thailand","Brunei Darussalam","India","South Korea","Philippines"],
-            "range": ["#003399","#0099CC","#FFCC00","#FF8C00","#AA4499","#CC6600","#66CCEE","#888888"]
+            "range": ["#0047AB","#9B72CF","#F72585","#7209B7","#4361EE","#FFBE0B","#560BAD","#6C584C"]
           }
         },
         "tooltip": [
@@ -74,14 +74,14 @@
           "type": "nominal",
           "scale": {
             "domain": ["Singapore","Indonesia","China","Thailand","Brunei Darussalam","India","South Korea","Philippines"],
-            "range": ["#003399","#0099CC","#FFCC00","#FF8C00","#AA4499","#CC6600","#66CCEE","#888888"]
+            "range": ["#0047AB","#9B72CF","#F72585","#7209B7","#4361EE","#FFBE0B","#560BAD","#6C584C"]
           }
         }
       }
     },
     {
       "data": { "values": [{ "x": "2021", "label": "Thailand #1 while Singapore border closed", "rank": 0.5 }] },
-      "mark": { "type": "text", "fontSize": 9, "fontStyle": "italic", "color": "#c47c35", "align": "center", "clip": false },
+      "mark": { "type": "text", "fontSize": 9, "fontStyle": "italic", "color": "#7209B7", "align": "center", "clip": false },
       "encoding": {
         "x": { "field": "x", "type": "ordinal" },
         "y": { "field": "rank", "type": "quantitative" },

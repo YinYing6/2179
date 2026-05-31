@@ -34,7 +34,7 @@
       "type": "nominal",
       "scale": {
         "domain": ["Retail Trade","Food & Beverage","Tourism Services","Accommodation","Transport","Cultural & Sports","Automotive Fuel","Travel Agencies"],
-        "range": ["#003399","#0099CC","#66CCEE","#FFCC00","#FF8C00","#CC6600","#AA4499","#888888"]
+        "range": ["#1A535C","#0099CC","#66CCEE","#FFCC00","#4ECDC4","#CC6600","#AA4499","#888888"]
       },
       "legend": {
         "title": "Sector",

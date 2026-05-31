@@ -42,7 +42,7 @@
       "type": "ordinal",
       "scale": {
         "domain": ["2023", "2024"],
-        "range": ["#B0C4CE", "#003d4d"]
+        "range": ["#B0C4CE", "#1D3557"]
       },
       "legend": {
         "title": null,

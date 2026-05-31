@@ -43,7 +43,7 @@
             "type": "nominal",
             "scale": {
               "domain": ["Increased", "Decreased", "Unchanged"],
-              "range": ["#003399", "#FF8C00", "#888888"]
+              "range": ["#74C69D", "#5C5C8A", "#BBBBBB"]
             },
             "legend": { "title": "Change", "orient": "bottom", "labelFontSize": 11, "symbolSize": 120 }
           },
@@ -65,7 +65,7 @@
             "type": "nominal",
             "scale": {
               "domain": ["Increased", "Decreased", "Unchanged"],
-              "range": ["#003399", "#FF8C00", "#888888"]
+              "range": ["#74C69D", "#5C5C8A", "#BBBBBB"]
             }
           },
           "detail": { "field": "category", "type": "nominal" },
@@ -88,7 +88,7 @@
             "type": "nominal",
             "scale": {
               "domain": ["Increased", "Decreased", "Unchanged"],
-              "range": ["#003399", "#FF8C00", "#888888"]
+              "range": ["#74C69D", "#5C5C8A", "#BBBBBB"]
             }
           },
           "detail": { "field": "category", "type": "nominal" }
